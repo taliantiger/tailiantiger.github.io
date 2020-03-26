@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post3s on My New Hugo Site</title>
+    <link>https://Talian000001.github.io/post3/</link>
+    <description>Recent content in Post3s on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Mar 2020 15:46:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://Talian000001.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to Talian&#39;s blog</title>
+      <link>https://Talian000001.github.io/post3/blog/</link>
+      <pubDate>Wed, 25 Mar 2020 15:46:43 +0800</pubDate>
+      
+      <guid>https://Talian000001.github.io/post3/blog/</guid>
+      <description>##这是我的第一篇博客
+ 个人邮箱：396318379@qq.com GitHub：https://github.com/Talian000001  欢迎大家一同讨论计算机程序相关的问题
+####这是一个图片添加尝试
+ 论述如何在电脑本地git里，给github上传文件 ####1.创建好github文件库，打开文件库，出现文件库地址备用
+####2.接下来进行本地操作，在本地创建一个文件夹，右击，选择Git Bash Here,进入git界面
+####3.再然后，在界面输入如下代码，把github上的仓库克隆到本地 git clone https://github.com/Talian000001/photo.io （&amp;ldquo;https://github.com/Talian000001/photo.io&amp;quot;替换成你之前复制的地址）
+####4.执行完第3步后，你的本地项目文件夹下面会多出个文件夹，我们把本地项目下所有文件（新增加的文件夹不用）都移动到新增的文件夹下
+####5.接着输入命令 cd photo.io ，进入 photo.io 文件夹
+####6.再然后，一次输入如下代码
+git add . (用于把photo文件夹下的文件都添加进来) git commit -m &amp;ldquo;abc.png&amp;rdquo; (adc.png：代表当时额外添加的文件的属性名称) git push -u origin master (把本地仓库push到github上，这个步骤要输入你的账号和密码) #####教程来自：博客园
+【持续更新中&amp;hellip;&amp;hellip;】 </description>
+    </item>
+    
+  </channel>
+</rss>
