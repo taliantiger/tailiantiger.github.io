@@ -6,10 +6,20 @@
     <description>Recent content in Post3s on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Mar 2020 15:46:43 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 01:21:43 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Second</title>
+      <link>https://taliantiger.github.io/post3/second/</link>
+      <pubDate>Fri, 27 Mar 2020 01:21:43 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/second/</guid>
+      <description>This just a testing for my second blog published testing
+I need to find out a way to save the problem of luanma with Chinese word.</description>
+    </item>
     
     <item>
       <title>Welcome to Talian&#39;s blog</title>
