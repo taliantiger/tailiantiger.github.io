@@ -6,10 +6,20 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 08:59:32 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 15:49:10 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>《python编程从入门到实践》8_10例题</title>
+      <link>https://taliantiger.github.io/post3/python_8_10%E4%BE%8B%E9%A2%98/</link>
+      <pubDate>Sat, 28 Mar 2020 15:49:10 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/python_8_10%E4%BE%8B%E9%A2%98/</guid>
+      <description>##《python编程从入门到实践》例题
+ 8-9 魔术师： 创建一个包含魔术师名字的列表，并将其传递给一个名为 show_magicians() 的函数，这个函数打印列表中每个函数的名字 8-10 了不起的魔术师：在你为完成练习 8—9 而编写的程序中，编写一个名为make_great()的函数，对魔术师列表进行修改，在每个魔术师的名字中都加入字样： the Great“。 调用函数show_magician,确认列表确实变了   构造函数关键: 函数（形参A，形参B），把形参A的列表pop出，再append到形参B的列表  def print_magicians(unprinted_magicians_names,completed_magicians): #定义“显示具体打印过程”的函数 ==》在函数中修改列表的模板 while unprinted_magicians_names: current_magician = unprinted_magicians_names.pop() #每打印完一个，除去掉“未打印列表”中的一个元素 print(&amp;#34;Printing magicians: &amp;#34; + current_magician) completed_magicians.append(current_magician) #每打完一个，就把被打印的append保存在之前的空列表中 #定义“显示打印结果”的函数 def show_completed_magicians(completed_magicians): print(&amp;#34;\nThe following magicians have been printed:&amp;#34;) for completed_magician in completed_magicians: print(completed_magician) def make_great(completed_magicians,completed_magicians_2): print(&amp;#34;\nThe following magicians is new&amp;#34;) while completed_magicians: current_magician_2=&amp;#34;the Great &amp;#34; + completed_magicians.pop() #类似重复第一个函数，pop一个函数的列表，加入另外一个函数的列表 completed_magicians_2.append(current_magician_2) for completed_magician_2 in completed_magicians_2: print(completed_magician_2) unprinted_magicians_names=[&amp;#39;A&amp;#39;,&amp;#39;B&amp;#39;,&amp;#39;C&amp;#39;,&amp;#39;D&amp;#39;] completed_magicians=[] completed_magicians_2=[] print_magicians(unprinted_magicians_names,completed_magicians) show_completed_magicians(completed_magicians) make_great(completed_magicians,completed_magicians_2) print(completed_magicians_2) #显示出添加“the Great” 后的结果 </description>
+    </item>
     
     <item>
       <title>Leetcode习题_01</title>
