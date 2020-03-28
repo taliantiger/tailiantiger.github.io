@@ -6,10 +6,25 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Mar 2020 13:36:13 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 08:59:32 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode习题_01</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_01/</link>
+      <pubDate>Sat, 28 Mar 2020 08:59:32 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_01/</guid>
+      <description>1.两数之和   给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+  你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
+  示例:
+给定 nums = [2, 7, 11, 15], target = 9,因为 nums[0] + nums[1] = 2 + 7 = 9,所以返回 [0, 1]
+   方法一:暴力法 遍历每个元素 xx，并查找是否存在一个值与 target - xtarget−x 相等的目标元素。
+Java:
+class Solution { public int[] twoSum(int[] nums, int target) { for (int i = 0; i &amp;lt; nums.length; i++) { for (int j = i + 1; j &amp;lt; nums.</description>
+    </item>
     
     <item>
       <title>Hugo建立博客用到的代码</title>
@@ -17,7 +32,16 @@
       <pubDate>Fri, 27 Mar 2020 13:36:13 +0800</pubDate>
       
       <guid>https://taliantiger.github.io/post3/hugo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E7%94%A8%E5%88%B0%E7%9A%84%E4%BB%A3%E7%A0%81/</guid>
-      <description>hugo建立博客用到的代码   前几天看了b站的程序羊的教学视频，学会了搭建个人博客。配置完git和hugo环境后，用到了很多git命令，现在在这里把后几步的git命令记录在这篇博客当中  建立好hugo和git环境后的前提下,在cmd中 1:输入代码hugo new site myblog3 (myblog3是我自己的命名的一个例子)  2:输入代码git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c(这里的theme主题可以自己在网站上找，我这里是程序羊推荐的) 再输入代码hugo server -t m10c --buildDrafts（在本地host先建立博客）  3:输入代码 hugo new post3/blog3.md (创建 文件夹post（自己命名），同时在建立博客.md文件（blog3也是自己命名的）)  4:输入代码 hugo --theme=m10c --baseUrl=&amp;quot;https://taliantiger.github.io/&amp;quot; --buildDrafts(用于建立public文件，其中&amp;quot;https://taliantiger.github.io/&amp;ldquo;填写你是自己之前建立的github仓库的地址)  5:输入代码 cd public (转到public这个仓库  6:输入代码 git init  (git基本操作）  7:输入代码 git add .  (git基本操作）  8:输入代码 git commit -m &amp;quot;taliantigertest&amp;quot; （把public文件提交到github上,其中&amp;quot;taliantigertest&amp;quot;可以自己填写，用作本次上传的标注文字）  9:输入代码 git remote add origin https://github.com/taliantiger/taliantiger.github.io.git （把本地文件挂在远端）  10:如果出现错误（如下图，则输入） git remote rm origin  11: 输入代码 git push -u origin master （开始启动push往github上推） </description>
+      <description>hugo建立博客用到的代码   前几天看了b站的程序羊的教学视频，学会了搭建个人博客。配置完git和hugo环境后，用到了很多git命令，现在在这里把后几步的git命令记录在这篇博客当中  建立好hugo和git环境后的前提下,在cmd中 1:输入代码 hugo new site myblog3 (myblog3是我自己的命名的一个例子)
+ 2:输入代码 git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c (这里的theme主题可以自己在网站上找，我这里是程序羊推荐的)
+再输入代码 hugo server -t m10c --buildDrafts（在本地host先建立博客）
+ 3:输入代码 hugo new post3/blog3.md (创建 文件夹post（自己命名），同时在建立博客.md文件（blog3也是自己命名的）)
+ 4:输入代码 hugo --theme=m10c --baseUrl=&amp;quot;https://taliantiger.github.io/&amp;quot; --buildDrafts(用于建立public文件，其中&amp;quot;https://taliantiger.github.io/&amp;ldquo;填写你是自己之前建立的github仓库的地址)
+ 5:输入代码 cd public (转到public这个仓库)
+ 6:输入代码 git init  (git基本操作）
+ 7:输入代码 git add .  (git基本操作）
+ 8:输入代码 git commit -m &amp;quot;taliantigertest&amp;quot; （把public文件提交到github上,其中&amp;quot;taliantigertest&amp;quot;可以自己填写，用作本次上传的标注文字）
+ 9:输入代码 git remote add origin https://github.com/taliantiger/taliantiger.github.io.git （把本地文件挂在远端）</description>
     </item>
     
     <item>
