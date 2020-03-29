@@ -6,10 +6,23 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 17:46:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 10:57:59 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode习题_02</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_02/</link>
+      <pubDate>Sun, 29 Mar 2020 10:57:59 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_02/</guid>
+      <description>两数之和_02   给定两个 非空 链表来表示两个非负整数。位数按照 逆序 方式存储，它们的每个节点只存储单个数字。将两数相加返回一个新的链表。
+你可以假设除了数字 0 之外，这两个数字都不会以零开头。
+示例：
+输入： (2 -&amp;gt; 4 -&amp;gt; 3) + (5 -&amp;gt; 6 -&amp;gt; 4) 输出： 7 -&amp;gt; 0 -&amp;gt; 8 原因： 342 + 465 = 807
+   Java:  public ListNode addTwoNumbers(ListNode l1, ListNode l2) { ListNode dummyHead = new ListNode(0); ListNode p = l1, q = l2, curr = dummyHead; int carry = 0; while (p != null || q !</description>
+    </item>
     
     <item>
       <title>多个实参输入一个形参中</title>
