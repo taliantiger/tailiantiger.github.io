@@ -6,10 +6,45 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Mar 2020 10:57:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 22:49:29 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java学习,何时开始使用IDE工具</title>
+      <link>https://taliantiger.github.io/post3/java%E5%AD%A6%E4%B9%A0%E4%BD%95%E6%97%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8ide%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 30 Mar 2020 22:49:29 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/java%E5%AD%A6%E4%B9%A0%E4%BD%95%E6%97%B6%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8ide%E5%B7%A5%E5%85%B7/</guid>
+      <description>Java学习，何时开始使用IDE工具呢？  标准是：如果你还离不开这个IDE工具，那么你就不能用这个IDE工具;只有 当你十分清楚再IDE工具里单击每一个菜单，单击每一个按钮&amp;hellip;&amp;hellip;IDE在底层 为你做的每个细节时，才可以使用IDE工具！  选自《疯狂Java讲义》
+ 仔细想想，挺有道理的，要想成为一名合格的程序员，我们必须要清楚地知道 软件每一步在细节上到底做了什么，知道事物的本质，才能更好的创造。就像 《三体》一样，看哪个文明的更厉害，就看哪个文明在微观之处研究得更深入 ，研究越细，越能了解事物得本质，创造更厉害得本质。
+今天刚读完这本《疯狂Java讲义》第一章， 在第一章提到了很多Java运行的细节: “编写” xxx.java 文件=》 javac 命令 “编译”.java文件，生成 xxx.class （类文件）=》 java 命令 “运行” xxx （类的名字）　．．．之类的运行步骤。还有classpath环境变量设置的 本质就是————JRE在设定的路径下搜索Java类。</description>
+    </item>
+    
+    <item>
+      <title>Leetcode习题_03</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_03/</link>
+      <pubDate>Mon, 30 Mar 2020 12:53:00 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_03/</guid>
+      <description>无重复字符的最长子串   给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+示例 1:
+输入: &amp;ldquo;abcabcbb&amp;rdquo; 输出: 3 解释: 因为无重复字符的最长子串是 &amp;ldquo;abc&amp;rdquo;，所以其长度为 3。
+   Python:  解题方法：利用动态规划求解:把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解  class Solution: def lengthOfLongestSubstring(self, s: str) -&amp;gt; int: if s == &amp;#39;&amp;#39;: return 0 if len(s) == 1: return 1 def find_left(s, i): tmp_str = s[i] j = i - 1 while j &amp;gt;= 0 and s[j] not in tmp_str: tmp_str += s[j] j -= 1 return len(tmp_str) length = 0 for i in range(0, len(s)): length = max(length, find_left(s, i)) return length  来源：leetcode</description>
+    </item>
+    
+    <item>
+      <title>Python_9_4例题</title>
+      <link>https://taliantiger.github.io/post3/python_9_4%E4%BE%8B%E9%A2%98/</link>
+      <pubDate>Sun, 29 Mar 2020 22:54:55 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/python_9_4%E4%BE%8B%E9%A2%98/</guid>
+      <description>又到周日了，仔细算算，看《python编程从入门到实践》学python已经有半个月了，还有2/3没看完，打算以后周五周末周日再看了。前天我的 《疯狂Java讲义》和《剑指offer》到了，打算工作日都主要研究Java为主，先把Java基础打好，才有更强大的工作资本。    9_4 就餐人数：
+在为完成练习1胜9负而编写的程序中,添加一个名为服务数量的属性,并将其默认值设置为0,根据这个类创建一个名为 餐厅的实例;打印有多少人在这家餐馆就餐过,然后修改这个值并再次打印它。
+添加一个名为设置数量为()的方法,它让你能够设置就餐人数。调用这个方法并向它传递一个值,然后再次打印这个值。
+添加一个名为增加数量为()的方法,它让你能够将就餐人数递增。调用这个方法并向它传递一个这样的值:你认为这家餐馆每天可能接待的就餐人数。   class Restaurant(): #定义一个类 def __init__(self,restaurant_name,cuisine_type): #记住这里__init__的下划线是左右各两条__，而不是一条_ self.restaurant_name = restaurant_name self.cuisine_type = cuisine_type self.number_served = 0 #特殊方法下面的选项开头之前，都要添加“self”，代表默认 def describe_restaurant(self): print(self.restaurant_name.title() + &amp;#34; is a very good restaurant.&amp;#34;) print(self.cuisine_type.title() + &amp;#34; is very tasty food for most people.&amp;#34;) def open_restaurant(self): #不知道为什么，复制粘贴过来就出错 ==&amp;gt;复制到之前的地方，对比下，就很明显，发现： “语法错误”，第9行复制过来后，没发现，print结尾少了括号。 print(&amp;#34;Our restaurant is opening&amp;#34;) def read_number_served(self):	#打印一条支出多少人用餐的消息 print(&amp;#34;This restaurant has &amp;#34; + str(self.number_served) + &amp;#34; person will eat food.</description>
+    </item>
     
     <item>
       <title>Leetcode习题_02</title>
