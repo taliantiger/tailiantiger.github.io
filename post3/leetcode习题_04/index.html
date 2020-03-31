@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Leetcode习题_04 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode习题_04"/>
+<meta name="twitter:description" content="寻找两个有序数组的中位数:   给定两个大小为m和n的有序数组 nums1 和 nums2 。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m &#43; n))。你可以假设 nums1 和 nums2 不会同时为空。   Python 想起之前书中例题，于是尝试：  利用pop( )语句，把nums2列表末尾元素“吹”出来； 再利用append() 语句，把列表元素“压”回到nums1[]中。 利用list.sort()排序。 再判断元素总个数的奇偶情况，分不同情况取中位数即可。  class Solution: def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -&gt; float:	def paixu(nums1,nums2): while nums2: a = nums2.pop() nums1.append(a) nums1.sort() return nums1 def test_length(nums1): len_1 = len(nums1) return len_1 def panduanshu(nums1,len_1): middle = len_1//2 if (len_1%2==0): result = (nums1[middle] &#43; nums1[middle-1])/2 else : result = nums1[middle] return result #nums1=paixu(nums1,nums2) #len_1=test_length(nums1) #result=panduanshu(nums1,len_1) return panduanshu(nums1,test_length(paixu(nums1,nums2))) #尝试不定义变量，直接嵌套调用,发现复杂的没变化。 "/>
+
+    <meta property="og:title" content="Leetcode习题_04" />
+<meta property="og:description" content="寻找两个有序数组的中位数:   给定两个大小为m和n的有序数组 nums1 和 nums2 。 请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m &#43; n))。你可以假设 nums1 和 nums2 不会同时为空。   Python 想起之前书中例题，于是尝试：  利用pop( )语句，把nums2列表末尾元素“吹”出来； 再利用append() 语句，把列表元素“压”回到nums1[]中。 利用list.sort()排序。 再判断元素总个数的奇偶情况，分不同情况取中位数即可。  class Solution: def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -&gt; float:	def paixu(nums1,nums2): while nums2: a = nums2.pop() nums1.append(a) nums1.sort() return nums1 def test_length(nums1): len_1 = len(nums1) return len_1 def panduanshu(nums1,len_1): middle = len_1//2 if (len_1%2==0): result = (nums1[middle] &#43; nums1[middle-1])/2 else : result = nums1[middle] return result #nums1=paixu(nums1,nums2) #len_1=test_length(nums1) #result=panduanshu(nums1,len_1) return panduanshu(nums1,test_length(paixu(nums1,nums2))) #尝试不定义变量，直接嵌套调用,发现复杂的没变化。 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_04/" />
+<meta property="article:published_time" content="2020-03-31T11:17:34+08:00" />
+<meta property="article:modified_time" content="2020-03-31T11:17:34+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Leetcode习题_04</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 31, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="寻找两个有序数组的中位数">寻找两个有序数组的中位数:</h4>
+<ul>
+<li>     给定两个大小为m和n的有序数组 nums1 和 nums2 。
+请你找出这两个有序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。你可以假设 nums1 和 nums2 不会同时为空。</li>
+</ul>
+<hr>
+<h3 id="python">Python</h3>
+<h4 id="nbspnbspnbspnbspnbsp-想起之前书中例题于是尝试">      想起之前书中例题，于是尝试：</h4>
+<ul>
+<li>利用pop( )语句，把nums2<input disabled="" type="checkbox"> 列表末尾元素“吹”出来；</li>
+<li>再利用append() 语句，把列表元素“压”回到nums1[]中。</li>
+<li>利用list.sort()排序。</li>
+<li>再判断元素总个数的奇偶情况，分不同情况取中位数即可。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">findMedianSortedArrays</span>(self, nums1: List[int], nums2: List[int]) <span style="color:#f92672">-&gt;</span> float:		
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">paixu</span>(nums1,nums2):
+            <span style="color:#66d9ef">while</span> nums2:
+                a <span style="color:#f92672">=</span> nums2<span style="color:#f92672">.</span>pop()
+                nums1<span style="color:#f92672">.</span>append(a)
+            nums1<span style="color:#f92672">.</span>sort()
+            <span style="color:#66d9ef">return</span> nums1
+			
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_length</span>(nums1):
+            len_1 <span style="color:#f92672">=</span> len(nums1)
+            <span style="color:#66d9ef">return</span> len_1
+		
+        <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">panduanshu</span>(nums1,len_1):
+            middle <span style="color:#f92672">=</span> len_1<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>
+            <span style="color:#66d9ef">if</span> (len_1<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>):
+                result <span style="color:#f92672">=</span> (nums1[middle] <span style="color:#f92672">+</span> nums1[middle<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+            <span style="color:#66d9ef">else</span> :
+                result <span style="color:#f92672">=</span> nums1[middle]
+            <span style="color:#66d9ef">return</span> result
+        <span style="color:#75715e">#nums1=paixu(nums1,nums2)</span>
+        <span style="color:#75715e">#len_1=test_length(nums1)</span>
+        <span style="color:#75715e">#result=panduanshu(nums1,len_1)</span>
+               
+        <span style="color:#66d9ef">return</span> panduanshu(nums1,test_length(paixu(nums1,nums2)))  <span style="color:#75715e">#尝试不定义变量，直接嵌套调用,发现复杂的没变化。</span>
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
