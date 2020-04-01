@@ -6,10 +6,38 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2020 11:17:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 09:56:11 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>正确的刷牙方法</title>
+      <link>https://taliantiger.github.io/post3/%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%88%B7%E7%89%99%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 01 Apr 2020 09:56:11 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%88%B7%E7%89%99%E6%96%B9%E6%B3%95/</guid>
+      <description>正确的刷牙方法  一个月前吃橘子的时候，橘子比较酸，但没有在意，等吃了很多个时，忽然觉得牙齿 一阵酸痛，用镜子看了看牙齿，发现左边的一颗牙龈比右边对称的牙龈萎缩了些，牙齿多露出了1.5毫米，用手一碰 露出的牙齿，就会一阵酸痛，当时以为是橘子腐蚀了，就一直不再吃橘子，但也没有深究。
+ 昨天突发奇想，查了查知乎牙龈萎缩相关资料，发现大部分观点是牙龈萎缩后基本 无法复原了，除做昂贵的手术或用其它物体把露出的牙齿粘上。再接着找资料，寻找牙龈萎缩的原因，发现自己的刷牙 方法从小就不太规范，虽然会斜着刷，但用的力度太大，以前经常刷牙刷出血&amp;hellip;&amp;hellip;没有完全按照巴氏刷牙法执行。同时我从大学开始， 牙刷就用的是中毛，可中毛和硬毛对牙龈有比较重的损伤，用软毛才比较合适。
+ 如果再不用正确的刷牙方法刷牙，估计就是严重的牙齿楔形，很难再修复了， 我的一颗牙齿已经有点楔形了，保护牙齿，还是早发现，早纠正。现实生活上也仿佛如此，表面上平平 安安，健康无事，但是很多风险与疾病就隐藏在暗处，真正的危险，往往也都是藏在暗处，就连国家，都无法 提前知道疾病会爆发，只能在疫情爆发后解决问题。我们有时也无法发现生活中所有的风险，能做的，只能是 在风险出现时，及时调整解决。虽然牙齿萎缩，很难恢复，但是从发现问题开始，好好好珍惜尚存完好的牙齿， 采取正确的刷牙方法，不让萎缩的牙齿接着严重下去，才是我当下要关注的事。
+ 给岁月以文明，而不是给文明以岁月。给牙齿恰当的保护，而不是损坏时的手术。
+ 牙齿楔形
+正确刷牙法</description>
+    </item>
+    
+    <item>
+      <title>Leetcode例题_05</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_05/</link>
+      <pubDate>Wed, 01 Apr 2020 09:48:03 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_05/</guid>
+      <description>最长回文子串   给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+示例 1：
+输入: &amp;ldquo;babad&amp;rdquo; 输出: &amp;ldquo;bab&amp;rdquo; 注意: &amp;ldquo;aba&amp;rdquo; 也是一个有效答案。
+示例 2：
+输入: &amp;ldquo;cbbd&amp;rdquo; 输出: &amp;ldquo;bb&amp;rdquo;
+   Python  基础暴力解法（有待研究）：  class Solution: # 暴力匹配（超时） def longestPalindrome(self, s: str) -&amp;gt; str: # 特判 size = len(s) if size &amp;lt; 2: return s max_len = 1 res = s[0] # 枚举所有长度大于等于 2 的子串 for i in range(size - 1): for j in range(i + 1, size): if j - i + 1 &amp;gt; max_len and self.</description>
+    </item>
     
     <item>
       <title>Leetcode习题_04</title>
