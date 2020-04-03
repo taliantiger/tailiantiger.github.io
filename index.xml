@@ -6,10 +6,19 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2020 09:56:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 20:54:16 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python_9 6例题</title>
+      <link>https://taliantiger.github.io/post3/python_9-6%E4%BE%8B%E9%A2%98/</link>
+      <pubDate>Fri, 03 Apr 2020 20:54:16 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/python_9-6%E4%BE%8B%E9%A2%98/</guid>
+      <description>冰激凌小店  9-6冰淇淋小店:冰淇淋小店是一种特殊的餐馆。编写一个名为IceCreamstand的类,让它继承你为完成 练习9-1或练习9-4而编写的Restaurant类。这两个版本的Restaurant类都可以,挑选你更喜欢的那个即可。 添加一个名为flavors的属性,用于存储一个由各种口味的冰淇淋组成的列表。编写一个显示这些冰淇淋的方法。 创建一个IceCreamstand 实例，并调用这个方法。   class Restaurant(): #定义一个类 def __init__(self,restaurant_name,cuisine_type): #记住这里__init__的下划线是左右各两条__，而不是一条_ self.restaurant_name = restaurant_name self.cuisine_type = cuisine_type self.number_served = 0 #特殊方法下面的选项开头之前，都要添加“self”，代表默认 def describe_restaurant(self): print(self.restaurant_name.title() + &amp;#34; is a very good restaurant.&amp;#34;) print(self.cuisine_type.title() + &amp;#34; is very tasty food for most people.&amp;#34;) def open_restaurant(self): #不知道为什么，复制粘贴过来就出错 ==&amp;gt;复制到之前的地方，对比下，就很明显，发现： “语法错误”，第9行复制过来后，没发现，print结尾少了括号。 print(&amp;#34;Our restaurant is opening&amp;#34;) def read_number_served(self):	#打印一条支出多少人用餐的消息 print(&amp;#34;This restaurant has &amp;#34; + str(self.number_served) + &amp;#34; person will eat food.&amp;#34;) def set_number_served(self,renshu) : #通过方法设置就餐人数 self.</description>
+    </item>
     
     <item>
       <title>正确的刷牙方法</title>
