@@ -6,10 +6,21 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2020 18:39:26 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 22:35:48 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>程序员的自我修养_1</title>
+      <link>https://taliantiger.github.io/post3/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/</link>
+      <pubDate>Wed, 15 Apr 2020 22:35:48 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/</guid>
+      <description>程序员的自我修养_1  程序员进行程序开发时，不要仅仅停留在代码表面，而要深入底层的运行机制， 才可以对程序的运行有更准确的把握。   看待一个数组时，一定要把数组看成两个部分： 一部分是数组引用，也就是在代码中定义的数组引用变量；还有一部分是实际的数组对象， 这部分是在堆内存里运行的，通常无法直接访问它，只能通过数组引用变量来访问。
+ 栈内存（或叫内存栈）：只是一个栈，里面存储内存变量。
+堆内存：一堆一堆的，里面存储对象，像一个池塘样的大圆。</description>
+    </item>
     
     <item>
       <title>英雄联盟成瘾机制</title>
