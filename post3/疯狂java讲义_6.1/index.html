@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>疯狂Java讲义_6 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="疯狂Java讲义_6"/>
+<meta name="twitter:description" content="疯狂Java讲义_6.1  包装类的由来： 基本数据类型不具备对象的特性:没成员变量、方法可以被调用。Java之所以提供这8种基本数据类型，主要是为了照顾程序员的传统习惯。Java提供了包装类（Wrapper Class）的概念，为8种基本数据类型分别定义了相应的引用类型，并称之为包装类。对应关系之间，可以相互转换。  从而产生了自动装箱、自动拆箱的概念。
+ 自动装箱:把一个基本类型变量直接赋给对应的包装类变量，或赋给Object变量。==》把小的基本东西放大大的类型东西里。 自动拆箱：和自动装箱相反，允许直接把包装类对象直接赋给一个对应的基本数据类型。==》把大的类型东西拆开，取出小的基本东西。   public class AutoBoxingUnboxing { public static void main(String[] args) { // 自动装箱： 直接把一个基本类型变量赋给Integer对象 	Integer inObj = 5; // 直接把一个boolean类型变量赋给Object类型的额变量 	Object boolObj = true; // 自动拆箱：直接把一个Integer对象赋给int类型的变量 	int it = inObj; if (boolObj instanceof Boolean) { // 先把Object对象强制类型转换成Boolean类型，再赋给 boolean 变量 	boolean b = (Boolean) boolObj; System.out.println(b); } } } "/>
+
+    <meta property="og:title" content="疯狂Java讲义_6" />
+<meta property="og:description" content="疯狂Java讲义_6.1  包装类的由来： 基本数据类型不具备对象的特性:没成员变量、方法可以被调用。Java之所以提供这8种基本数据类型，主要是为了照顾程序员的传统习惯。Java提供了包装类（Wrapper Class）的概念，为8种基本数据类型分别定义了相应的引用类型，并称之为包装类。对应关系之间，可以相互转换。  从而产生了自动装箱、自动拆箱的概念。
+ 自动装箱:把一个基本类型变量直接赋给对应的包装类变量，或赋给Object变量。==》把小的基本东西放大大的类型东西里。 自动拆箱：和自动装箱相反，允许直接把包装类对象直接赋给一个对应的基本数据类型。==》把大的类型东西拆开，取出小的基本东西。   public class AutoBoxingUnboxing { public static void main(String[] args) { // 自动装箱： 直接把一个基本类型变量赋给Integer对象 	Integer inObj = 5; // 直接把一个boolean类型变量赋给Object类型的额变量 	Object boolObj = true; // 自动拆箱：直接把一个Integer对象赋给int类型的变量 	int it = inObj; if (boolObj instanceof Boolean) { // 先把Object对象强制类型转换成Boolean类型，再赋给 boolean 变量 	boolean b = (Boolean) boolObj; System.out.println(b); } } } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6.1/" />
+<meta property="article:published_time" content="2020-04-23T23:49:45+08:00" />
+<meta property="article:modified_time" content="2020-04-23T23:49:45+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">疯狂Java讲义_6</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 23, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="疯狂java讲义_61">疯狂Java讲义_6.1</h4>
+<ul>
+<li>包装类的由来： 基本数据类型不具备对象的特性:没成员变量、方法可以被调用。Java之所以提供这8种基本数据类型，主要是为了照顾程序员的传统习惯。Java提供了包装类（Wrapper Class）的概念，为8种基本数据类型分别定义了相应的引用类型，并称之为包装类。对应关系之间，可以相互转换。</li>
+</ul>
+<p>从而产生了自动装箱、自动拆箱的概念。</p>
+<ul>
+<li>自动装箱:把一个基本类型变量直接赋给对应的包装类变量，或赋给Object变量。==》把小的基本东西放大大的类型东西里。</li>
+<li>自动拆箱：和自动装箱相反，允许直接把包装类对象直接赋给一个对应的基本数据类型。==》把大的类型东西拆开，取出小的基本东西。</li>
+</ul>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AutoBoxingUnboxing</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>
+	<span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 自动装箱： 直接把一个基本类型变量赋给Integer对象
+</span><span style="color:#75715e"></span>	Integer inObj <span style="color:#f92672">=</span> 5<span style="color:#f92672">;</span>
+	<span style="color:#75715e">// 直接把一个boolean类型变量赋给Object类型的额变量
+</span><span style="color:#75715e"></span>	Object boolObj <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+	<span style="color:#75715e">// 自动拆箱：直接把一个Integer对象赋给int类型的变量
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> it <span style="color:#f92672">=</span> inObj<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>boolObj <span style="color:#66d9ef">instanceof</span> Boolean<span style="color:#f92672">)</span>
+	<span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 先把Object对象强制类型转换成Boolean类型，再赋给 boolean 变量
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">boolean</span> b <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Boolean<span style="color:#f92672">)</span> boolObj<span style="color:#f92672">;</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>b<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -6,10 +6,41 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2020 12:47:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2020 23:49:45 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>疯狂Java讲义_6</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6.1/</link>
+      <pubDate>Thu, 23 Apr 2020 23:49:45 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6.1/</guid>
+      <description>疯狂Java讲义_6.1  包装类的由来： 基本数据类型不具备对象的特性:没成员变量、方法可以被调用。Java之所以提供这8种基本数据类型，主要是为了照顾程序员的传统习惯。Java提供了包装类（Wrapper Class）的概念，为8种基本数据类型分别定义了相应的引用类型，并称之为包装类。对应关系之间，可以相互转换。  从而产生了自动装箱、自动拆箱的概念。
+ 自动装箱:把一个基本类型变量直接赋给对应的包装类变量，或赋给Object变量。==》把小的基本东西放大大的类型东西里。 自动拆箱：和自动装箱相反，允许直接把包装类对象直接赋给一个对应的基本数据类型。==》把大的类型东西拆开，取出小的基本东西。   public class AutoBoxingUnboxing { public static void main(String[] args) { // 自动装箱： 直接把一个基本类型变量赋给Integer对象 	Integer inObj = 5; // 直接把一个boolean类型变量赋给Object类型的额变量 	Object boolObj = true; // 自动拆箱：直接把一个Integer对象赋给int类型的变量 	int it = inObj; if (boolObj instanceof Boolean) { // 先把Object对象强制类型转换成Boolean类型，再赋给 boolean 变量 	boolean b = (Boolean) boolObj; System.out.println(b); } } } </description>
+    </item>
+    
+    <item>
+      <title>衡量中产阶级</title>
+      <link>https://taliantiger.github.io/post3/%E8%A1%A1%E9%87%8F%E4%B8%AD%E4%BA%A7%E9%98%B6%E7%BA%A7/</link>
+      <pubDate>Tue, 21 Apr 2020 23:06:39 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E8%A1%A1%E9%87%8F%E4%B8%AD%E4%BA%A7%E9%98%B6%E7%BA%A7/</guid>
+      <description>衡量中产阶级  衡量一个人，一个家庭是否处于中产阶级的一个重要标志， 应该是能否在不工作的情况下，能独立正常地处理好日常生活地事物。
+ 当我们遭遇突发状况时，储蓄状况如何， 除工作经济收入外，是否还有其他地经济收入？纵观自己的家庭，当家里长辈可能要住院时， 真没几个人能果断放下工作，以长辈健康为根本，来自愿自愿照顾老人的，毕竟家里人大部分都是普通人， 都有工作，要养活自己或照顾小孩。
+ 如果有足够的除工作外的收入， 那我们的生活才可以说有足够保障。可是现实是，生活中大部分都是普通人， 只能靠工作来养活自己，养活家庭。
+ 但是也不用太悲观，发现问题，总比隐藏住问题好。 我们至少可以有危机意识，未雨绸缪。这也是我们要尽可能养成储蓄和投资习惯，不要做“月光族”的原因。 多一份保障，给自己多一份安全感，让未来的日子更好过。程序员也如此，迟早都有中年危机， 年轻时多谋几条出路，多做好准备，总是好些。</description>
+    </item>
+    
+    <item>
+      <title>疯狂Java讲义</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89/</link>
+      <pubDate>Sat, 18 Apr 2020 21:14:09 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89/</guid>
+      <description>疯狂 Java讲义  第五章  Java编程时不要使用对象去调用static修饰的成员变量、方法， 而是应该使用类去调用static修饰的成员变量、方法!</description>
+    </item>
     
     <item>
       <title>波士顿法律</title>
