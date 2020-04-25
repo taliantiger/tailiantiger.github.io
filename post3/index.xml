@@ -6,10 +6,23 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Apr 2020 23:49:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 23:04:26 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>疯狂Java讲义_6</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_06/</link>
+      <pubDate>Sat, 25 Apr 2020 23:04:26 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_06/</guid>
+      <description>疯狂Java讲义   实现(implements)：类似于“多继承”。
+  接口：当说PCI接口时，指的是主机板上那个插槽遵守了PCI规范，而具体的PCI插槽只是PCI接口的实例。
+  构造器：（1）构造器名字和类名相同。
+（2）无返回值，也无需void。 （3）用public、protect、privated修饰，或无修饰。
+  </description>
+    </item>
     
     <item>
       <title>疯狂Java讲义_6</title>
