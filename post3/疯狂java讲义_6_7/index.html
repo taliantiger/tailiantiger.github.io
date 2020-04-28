@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>疯狂Java讲义_6_7 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="疯狂Java讲义_6_7"/>
+<meta name="twitter:description" content="非静态内部类 （一）内部实例方法访问外部pravate变量
+ 下面程序在Cow类里定义了一个CowLeg非静态内部类， 并在CowLeg类的实例方法中直接访问Cow的private访问权限的实例变量。(private:只有当前类可见)
+ public class Cow { private double weight; // 外部类的两个重载的构造器 	public Cow() {} public Cow(double weight) { this.weight = weight; } // 定义一个非静态内部类,专门研究奶你腿 	// private class Cowleg 	private class CowLeg // 注意一个字母不单单开头可能要大写，中间也可能要大写。不然报错：Cow.java:19: 错误: 方法声明无效; 需要返回类型 ==》 可能就是方法或类的名字写错了。 	{ // 非静态内部类的两个实例变量 	private double length; private String color ; // 非静态内部类的两个重载器 	public CowLeg() {} public CowLeg(double length, String color) { this.length = length; this."/>
+
+    <meta property="og:title" content="疯狂Java讲义_6_7" />
+<meta property="og:description" content="非静态内部类 （一）内部实例方法访问外部pravate变量
+ 下面程序在Cow类里定义了一个CowLeg非静态内部类， 并在CowLeg类的实例方法中直接访问Cow的private访问权限的实例变量。(private:只有当前类可见)
+ public class Cow { private double weight; // 外部类的两个重载的构造器 	public Cow() {} public Cow(double weight) { this.weight = weight; } // 定义一个非静态内部类,专门研究奶你腿 	// private class Cowleg 	private class CowLeg // 注意一个字母不单单开头可能要大写，中间也可能要大写。不然报错：Cow.java:19: 错误: 方法声明无效; 需要返回类型 ==》 可能就是方法或类的名字写错了。 	{ // 非静态内部类的两个实例变量 	private double length; private String color ; // 非静态内部类的两个重载器 	public CowLeg() {} public CowLeg(double length, String color) { this.length = length; this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6_7/" />
+<meta property="article:published_time" content="2020-04-27T09:47:34+08:00" />
+<meta property="article:modified_time" content="2020-04-27T09:47:34+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">疯狂Java讲义_6_7</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 27, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="非静态内部类">非静态内部类</h4>
+<p>（一）内部实例方法访问外部pravate变量</p>
+<p>        下面程序在Cow类里定义了一个CowLeg非静态内部类，
+并在CowLeg类的实例方法中直接访问Cow的private访问权限的实例变量。(private:只有当前类可见)</p>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cow</span>
+<span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> weight<span style="color:#f92672">;</span>
+	<span style="color:#75715e">// 外部类的两个重载的构造器
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Cow</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Cow</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> weight<span style="color:#f92672">)</span> 
+	<span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">weight</span> <span style="color:#f92672">=</span> weight<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// 定义一个非静态内部类,专门研究奶你腿
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// private class Cowleg
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CowLeg</span>   <span style="color:#75715e">// 注意一个字母不单单开头可能要大写，中间也可能要大写。不然报错：Cow.java:19: 错误: 方法声明无效; 需要返回类型 ==》 可能就是方法或类的名字写错了。
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 非静态内部类的两个实例变量
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> length<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">private</span> String color <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 非静态内部类的两个重载器
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CowLeg</span><span style="color:#f92672">()</span> <span style="color:#f92672">{}</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CowLeg</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> length<span style="color:#f92672">,</span> String color<span style="color:#f92672">)</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> length<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color <span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// 下面描绘出length、color的setter和getter方法
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setLength</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> length<span style="color:#f92672">)</span>
+		<span style="color:#f92672">{</span>
+		   <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> length<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getLength</span><span style="color:#f92672">()</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setColor</span><span style="color:#f92672">(</span>String color<span style="color:#f92672">)</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> color<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getColor</span><span style="color:#f92672">()</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">color</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// 非静态内部类的实例方法
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">info</span><span style="color:#f92672">()</span>
+		<span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;当前牛腿颜色是:&#34;</span>
+				<span style="color:#f92672">+</span> color <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;,高:&#34;</span> <span style="color:#f92672">+</span> length<span style="color:#f92672">);</span>
+			<span style="color:#75715e">// 直接访问外部类的private修饰的成员变量
+</span><span style="color:#75715e"></span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;本牛腿所在奶牛重：&#34;</span> <span style="color:#f92672">+</span> weight<span style="color:#f92672">);</span>   <span style="color:#75715e">// (1)
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">()</span> 
+	<span style="color:#f92672">{</span>
+		CowLeg cl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CowLeg<span style="color:#f92672">(</span>1<span style="color:#f92672">.</span><span style="color:#a6e22e">12</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;黑白相间&#34;</span><span style="color:#f92672">);</span>
+		cl<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> 
+	<span style="color:#f92672">{</span>   
+		<span style="color:#75715e">// 调用重载构造器，创建奶牛实例，修改奶牛重量，并赋给Cow类的cow
+</span><span style="color:#75715e"></span>		Cow cow <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cow<span style="color:#f92672">(</span>378<span style="color:#f92672">.</span><span style="color:#a6e22e">9</span><span style="color:#f92672">);</span> 
+		cow<span style="color:#f92672">.</span><span style="color:#a6e22e">test</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+
+</code></pre></div><hr>
+<p>        上面程序(1) 中，就是CowLeg类的方法直接访问其外部类的private实例变量。
+这是因为非静态内部类的外部对象的引用（调用非静态内部类的实例方法时，必须有一个非静态内部类实例，
+非静态内部了实例必须寄生在外部类实例里。</p>
+<hr>
+<p>（二）访问的区别</p>
+<ul>
+<li>直接访问：直接写变量名字   。</li>
+<li>显示访问： new 类名( ).变量名   。</li>
+</ul>
+<p>(三)内部类区别</p>
+<ul>
+<li>静态内部类：使用static修饰了的内部类。</li>
+<li>非静态内部类：没使用static修饰的内部类。</li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

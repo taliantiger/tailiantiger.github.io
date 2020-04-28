@@ -6,10 +6,34 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Apr 2020 23:04:26 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 10:42:17 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>愚昧贫穷人的本质</title>
+      <link>https://taliantiger.github.io/post3/%E6%84%9A%E6%98%A7%E8%B4%AB%E7%A9%B7%E4%BA%BA%E7%9A%84%E6%9C%AC%E8%B4%A8/</link>
+      <pubDate>Tue, 28 Apr 2020 10:42:17 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E6%84%9A%E6%98%A7%E8%B4%AB%E7%A9%B7%E4%BA%BA%E7%9A%84%E6%9C%AC%E8%B4%A8/</guid>
+      <description>永远不要相信愚昧的穷人   能不和穷人相处就不和愚昧穷人相处，哪怕自己一个人独处也好，不要对他们付出时间和精力，不然只是恶心自己。
+  愚昧的穷人永远不可能有所本质的改变，你永远无法相信愚昧的穷人会做出什么事情来恶心干涉你的生活。
+  愚昧的穷人，不但物质贫穷，知识和精神也贫穷，爱贪一点小便宜，不明白事物的本质，思维上无法有所提高，只能任人宰割， 或恶心其他人。
+  愚昧使人贫穷，贫穷使人愚昧，不断恶性循环，愚昧的穷人如果能有所改变，就不是愚昧的穷人，但基本上愚昧的穷人会愚昧贫穷一辈子。
+  </description>
+    </item>
+    
+    <item>
+      <title>疯狂Java讲义_6_7</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6_7/</link>
+      <pubDate>Mon, 27 Apr 2020 09:47:34 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_6_7/</guid>
+      <description>非静态内部类 （一）内部实例方法访问外部pravate变量
+ 下面程序在Cow类里定义了一个CowLeg非静态内部类， 并在CowLeg类的实例方法中直接访问Cow的private访问权限的实例变量。(private:只有当前类可见)
+ public class Cow { private double weight; // 外部类的两个重载的构造器 	public Cow() {} public Cow(double weight) { this.weight = weight; } // 定义一个非静态内部类,专门研究奶你腿 	// private class Cowleg 	private class CowLeg // 注意一个字母不单单开头可能要大写，中间也可能要大写。不然报错：Cow.java:19: 错误: 方法声明无效; 需要返回类型 ==》 可能就是方法或类的名字写错了。 	{ // 非静态内部类的两个实例变量 	private double length; private String color ; // 非静态内部类的两个重载器 	public CowLeg() {} public CowLeg(double length, String color) { this.length = length; this.</description>
+    </item>
     
     <item>
       <title>疯狂Java讲义_6</title>
