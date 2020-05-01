@@ -6,10 +6,36 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Apr 2020 21:11:36 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2020 21:36:08 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>十进制小数转为二进制</title>
+      <link>https://taliantiger.github.io/post3/%E5%8D%81%E8%BF%9B%E5%88%B6%E5%B0%8F%E6%95%B0%E8%BD%AC%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/</link>
+      <pubDate>Fri, 01 May 2020 21:36:08 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E5%8D%81%E8%BF%9B%E5%88%B6%E5%B0%8F%E6%95%B0%E8%BD%AC%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6/</guid>
+      <description>十进制小数转为二进制 十进制小数转换成二进制小数采用&amp;quot;乘2取整，顺序排列&amp;quot;法。具体做法是：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，或者达到所要求的精度为止。 然后把取出的整数部分按顺序排列起来，先取的整数作为二进制小数的高位有效位，后取的整数作为低位有效位。
+0.425
+0.425x2=0.85 =&amp;gt;取0
+0.85x2=1.7 =&amp;gt;取1
+0.7x2=1.4 =&amp;gt;取1
+0.4x2=0.8 =&amp;gt;取0
+0.8x2=1.6 =&amp;gt;取1
+0.6x2=1.2 =&amp;gt;取1
+&amp;hellip;. （取前6位=&amp;gt;011011B,后面还会循环下去)
+0.425=011011B
+不都是无限循环，如0.5=0.1B
+   小数部分处理方式:小数部分乘2再取整,直到小数部分乘2结果等于1.
+特点:小数部分先取的得到的数字,靠经小数点&amp;rdquo;.&amp;quot;;
+  整数部分处理方式:整数部分除以2取余数.不断循环,直到最后除以2后得到的商,等于0.
+特点:类似于小数部分,先得到的余数(低位数字),也更靠近小数点&amp;rdquo;.&amp;rdquo;
+   参考来自:
+百度知道-十进制的小数部分怎么转为二进制
+知乎-十进制二进制的转换</description>
+    </item>
     
     <item>
       <title>现实中的西部世界</title>
