@@ -63,7 +63,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          2 min read
+          3 min read
         </div></div>
     </header>
     <div class="post-content">
@@ -166,8 +166,67 @@
 
 
 </code></pre></div><hr>
+<h4 id="解决方法动态规划法">解决方法：动态规划法</h4>
+<p>Leetcode 上一位程序员分享的表格分析方法</p>
+<p><img src="http://talian000001.xyz/myfile_1/photo/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92_2.jpg" alt="tubiao"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span><span style="color:#f92672">{</span>
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	     <span style="color:#75715e">// System.out.println( longestPalindromel(&#34;acdbbdaa&#34;) );
+</span><span style="color:#75715e"></span>           System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span> longestPalindrome<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;abbbbb&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+	
+	
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">longestPalindrome</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">){</span>
+		<span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>len <span style="color:#f92672">&lt;</span> 2<span style="color:#f92672">){</span>
+			<span style="color:#66d9ef">return</span> s<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">boolean</span><span style="color:#f92672">[][]</span> dp <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[</span>len<span style="color:#f92672">][</span>len<span style="color:#f92672">];</span>
+	
+	<span style="color:#75715e">// 初始化
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>i <span style="color:#f92672">&lt;</span> len<span style="color:#f92672">;</span> i<span style="color:#f92672">++){</span>
+		dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#66d9ef">int</span> maxLen <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">int</span> start <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+	
+	 <span style="color:#75715e">// 先一段一段分析完，即：先分析0-0这列；再分析0-1这列；再分析0-2（包含子串0-1，1-2）这列；再分析0-3（包含子串1-2）这列.......
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> len<span style="color:#f92672">;</span> j<span style="color:#f92672">++){</span>            <span style="color:#75715e">// j代表列，j=1，先代表单独分析第一列
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> j<span style="color:#f92672">;</span> i<span style="color:#f92672">++){</span>          <span style="color:#75715e">// i代表行。
+</span><span style="color:#75715e"></span>			
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>j<span style="color:#f92672">))</span>  <span style="color:#f92672">{</span>
+			    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>j <span style="color:#f92672">-</span> i <span style="color:#f92672">&lt;</span> 3<span style="color:#f92672">){</span>
+				    dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+				<span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+				     dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span>  <span style="color:#f92672">=</span> dp<span style="color:#f92672">[</span>i <span style="color:#f92672">+</span> 1 <span style="color:#f92672">][</span>j <span style="color:#f92672">-</span> 1<span style="color:#f92672">];</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#66d9ef">else</span>  <span style="color:#f92672">{</span>
+				dp <span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>    <span style="color:#75715e">//不相等，则不回文。
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+		     
+			 <span style="color:#75715e">// 只要 dp[i][j] == true 成立，就表示子串 s[i, j] 是回文，此时记录回文长度和起始位置
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>dp<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">])</span>  <span style="color:#f92672">{</span>
+				<span style="color:#66d9ef">int</span> curLen <span style="color:#f92672">=</span> j <span style="color:#f92672">-</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>curLen <span style="color:#f92672">&gt;</span> maxLen<span style="color:#f92672">){</span>
+					maxLen <span style="color:#f92672">=</span> curLen<span style="color:#f92672">;</span>
+					start <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+     <span style="color:#66d9ef">return</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>start<span style="color:#f92672">,</span>start <span style="color:#f92672">+</span> maxLen<span style="color:#f92672">);</span>
+	
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
 <p>参考来自：
-<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa/">Leetcode</a></p>
+<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa/">Leetcode_1</a></p>
+<p><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/">Leetcode_2</a></p>
 
     </div>
     <div class="post-footer">
