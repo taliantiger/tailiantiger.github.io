@@ -6,10 +6,19 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2020 23:55:44 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2020 01:10:29 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog3</title>
+      <link>https://taliantiger.github.io/post3/blog3/</link>
+      <pubDate>Tue, 02 Jun 2020 01:10:29 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/blog3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>失败的尝试</title>
