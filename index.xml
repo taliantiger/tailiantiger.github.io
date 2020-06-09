@@ -6,18 +6,32 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2020 01:10:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2020 23:16:44 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Blog3</title>
-      <link>https://taliantiger.github.io/post3/blog3/</link>
-      <pubDate>Tue, 02 Jun 2020 01:10:29 +0800</pubDate>
+      <title>The_bitch_of_school&#39;s_net</title>
+      <link>https://taliantiger.github.io/post3/the_bitch_of_schools_net/</link>
+      <pubDate>Mon, 08 Jun 2020 23:16:44 +0800</pubDate>
       
-      <guid>https://taliantiger.github.io/post3/blog3/</guid>
-      <description></description>
+      <guid>https://taliantiger.github.io/post3/the_bitch_of_schools_net/</guid>
+      <description> All in all, school&amp;rsquo;s internet is the most wrong things I ever meet, when you use it to play games, it&amp;rsquo;s making you crazy and suck.  </description>
+    </item>
+    
+    <item>
+      <title>Git命令出从出错</title>
+      <link>https://taliantiger.github.io/post3/git%E5%91%BD%E4%BB%A4%E5%87%BA%E4%BB%8E%E5%87%BA%E9%94%99/</link>
+      <pubDate>Tue, 02 Jun 2020 22:46:03 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/git%E5%91%BD%E4%BB%A4%E5%87%BA%E4%BB%8E%E5%87%BA%E9%94%99/</guid>
+      <description>Git命令出错  昨天晚上上传博客，到最后一步时候，出现了错误
+H:\myblogs\myblog3\public&amp;gt;git push -u origin master git@github.com: Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.  找了挺多资料，大多数都是更改hosts文件里的github.com的ip地址。但是修改后依然出错。 最后看到一篇关于解决这个错误的文章，解决方法有点不同，提到了用 git remote set-url origin + github仓库地址 的命令。输入上条命令，再运行 git push origin master ，成功把博客上传到github。
+  推测错误产生原因
+（1）可能需要更新hosts 里的GitHub的ip地址
+（2）太久（20天）没登录GitHub，原本保存的缓存账号信息失效，需要重新更新GitHub仓库链接地址。
+  </description>
     </item>
     
     <item>
