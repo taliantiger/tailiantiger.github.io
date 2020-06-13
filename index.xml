@@ -6,10 +6,58 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2020 21:19:56 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 20:51:36 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode习题_9</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_9/</link>
+      <pubDate>Sat, 13 Jun 2020 20:51:36 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_9/</guid>
+      <description>回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+示例 1:
+输入: 121
+输出: true
+示例 2:
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+示例 3:
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+进阶:
+你能不将整数转为字符串来解决这个问题吗？
+  普通解法思路：简单分析回文数，了解它的特点。把整数转为数组， 比较首末是否相同。  // 自己想的简单解法。 public class Solution { public static boolean isPalindrome(int x) { boolean flag = true ; // 初始化标识符 	int i = 0 ; // 初始化整型变量 i 	int j = 0; // 初始化变量 j 	int length_1 = 0; // 初始化变量length_1  // String.</description>
+    </item>
+    
+    <item>
+      <title>杂谈</title>
+      <link>https://taliantiger.github.io/post3/%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Sat, 13 Jun 2020 12:20:17 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E6%9D%82%E8%B0%88/</guid>
+      <description>你在思考什么的时候，你的世界就是怎么样的。   在宿舍待久了，大家一讨论，声音 就会吸引人的注意力，我的思维就会跟着其他人走，就没法思考了， 更别说去学算法。学编程最重要的就是沉浸式体验，完全以算法思维解决问题， 熟悉计算机的原理，但是别人在你面前闪过，讨论几句，这一切都成为空谈。 所以知乎上说要离开宿舍去学习。
+ 金钱可以改变人与人之间的关系，利益也可以   当来到教室自习室，总有人喜欢在诺大的自习教室讨论问题，以为像老鼠一样嘀咕， 别人就会听不见，或者明知别人会听见，也不管。这就是典型的素质问题，而素质不好， 令他们的利益和整个教室其他人的利益产生冲突，最后他们选择要自己的利益。在我看来， 他们还是贫穷，不懂世事，家里也穷。虽然我家里也穷，但是我至少知道在教室里保持安静，在图书馆也保持安静。 但这些物质上贫穷，经济上也贫穷的人，在图书馆唯唯诺诺，一般不会讨论， 但是在教室自习室上，只能靠道德的约束的情况下，果断选择自己的利益为第一位，就是和其他人不断讨论。
+ “真棒，你们真是群优秀的人，可以看出你们的父母也是擅长讨论的聪明人！”
+  大家靠利益的关系决定自己的行为，这大概就是“劣币驱逐良币”的原理之一吧， 爱情是这样，婚姻也是这样。
+ 更加敬佩刘慈欣对人性的洞察， 一边希望人类过得更好，一边讽刺自大无知愚昧利益交错的人类。
+ 至于自己，在这个奇怪的世界上，为数不多感兴趣的事， 应该是“接下来有意思的技术会发展成什么样子呢？”。在漫漫宇宙长河中，人类的文明只是沧海一粟， 而我们普通人的时间，对于整个社会，只是一shit。100年后，有谁会记得我们，就算记得，1000年，10000年&amp;hellip;&amp;hellip; 过好自己，尽量处理好手头的事，人生，也就如此。</description>
+    </item>
+    
+    <item>
+      <title>Git基础教程</title>
+      <link>https://taliantiger.github.io/post3/git%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 11 Jun 2020 20:53:19 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/git%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</guid>
+      <description>  git remote 命令：查看你已经配置的远程仓库服务器
+  git fetch ： 从远程仓库中获得数据，这个命令会访问远程仓库， 从中拉取所有你还没有的数据。 执行完成后，你将会拥有那个远程仓库中所有分支的引用， 可以随时合并或查看。
+  </description>
+    </item>
     
     <item>
       <title>LeetCode习题_8</title>
@@ -45,7 +93,7 @@
     </item>
     
     <item>
-      <title>Git命令出从出错</title>
+      <title>Git命令出错</title>
       <link>https://taliantiger.github.io/post3/git%E5%91%BD%E4%BB%A4%E5%87%BA%E9%94%99/</link>
       <pubDate>Tue, 02 Jun 2020 22:46:03 +0800</pubDate>
       

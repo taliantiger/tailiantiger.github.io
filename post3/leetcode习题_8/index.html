@@ -130,59 +130,72 @@
 <p>输出: -2147483648</p>
 <p>解释: 数字 &ldquo;-91283472332&rdquo; 超过 32 位有符号整数范围。因此返回 INT_MIN (−231) 。</p>
 <hr>
-<h4 id="代码还有错误要修改">代码还有错误要修改</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#75715e">// 还有些小问题没有完全解决。
+<h4 id="最终修改结果">最终修改结果</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#75715e">// 20200613 问题解决了
+</span><span style="color:#75715e">// 一步一步把原理搞懂，就知道哪里写错了。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myAtoi</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>    <span style="color:#75715e">// 定义一个静态类型的方法Atoi
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">();</span>       <span style="color:#75715e">//  定义一个字符型数组
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> chars<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>						  <span style="color:#75715e">// 初始化整型变量n，大小为数组chars的长度
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>									  <span style="color:#75715e">// 初始化整型变量idx，大小为0。
 </span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">myAtoi</span><span style="color:#f92672">(</span>String str<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">();</span>
-		<span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> chars<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">&amp;&amp;</span> chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">)</span>   <span style="color:#f92672">{</span> 
-			<span style="color:#75715e">// 去掉前导空格
-</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
+		<span style="color:#75715e">/* 先把各种特殊情况判断完  */</span>
+		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">&amp;&amp;</span> chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>      <span style="color:#75715e">// 当char[idx] 为空格时
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 去掉前导空格
+</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>                                                 <span style="color:#75715e">// 跳过char[idx]
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+		<span style="color:#75715e">// if (idx == 0)   {                                     // 之前这里代码写错了 ，导致返回结果老是为0。   
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">==</span> n<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>     
 			<span style="color:#75715e">// 去掉前导空格以后到了末尾了
-</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">boolean</span> negative <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
-			<span style="color:#75715e">// 遇到负号
-</span><span style="color:#75715e"></span>			negative <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
-			idx<span style="color:#f92672">++;</span>
-		<span style="color:#f92672">}</span>   
-		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;+&#39;</span> <span style="color:#f92672">)</span>   	<span style="color:#f92672">{</span>
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>                                           <span style="color:#75715e">// 返回 0。
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">boolean</span> negative <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>                    <span style="color:#75715e">// 初始化布尔类型变量negative,初始值为false。 
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>                          <span style="color:#75715e">// 判断数字是否为负号
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 遇到负号
+</span><span style="color:#75715e"></span>			negative <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>                             <span style="color:#75715e">// 令布尔类型变量值为true。
+</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>                                             <span style="color:#75715e">// 前往下一个元素
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>   
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;+&#39;</span> <span style="color:#f92672">)</span>   	<span style="color:#f92672">{</span>              
 			<span style="color:#75715e">// 遇到正号
-</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>
-		<span style="color:#f92672">}</span>
-		
-		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>Character<span style="color:#f92672">.</span><span style="color:#a6e22e">isDigit</span><span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]))</span>  <span style="color:#f92672">{</span>
-			 <span style="color:#75715e">// 其他符号
+</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>                                             <span style="color:#75715e">// 前往下一个元素
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>Character<span style="color:#f92672">.</span><span style="color:#a6e22e">isDigit</span><span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]))</span>  <span style="color:#f92672">{</span>  <span style="color:#75715e">//Character.isDigit() 方法用于判断指定字符是否为数字。如果字符为数字，则返回 true；否则返回 false。
+</span><span style="color:#75715e"></span>			 <span style="color:#75715e">// 其他符号
 </span><span style="color:#75715e"></span>			  <span style="color:#66d9ef">return</span> 0 <span style="color:#f92672">;</span>
 		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">&amp;&amp;</span> Character<span style="color:#f92672">.</span><span style="color:#a6e22e">isDigit</span><span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">])</span> <span style="color:#f92672">)</span> 		<span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">int</span> digit <span style="color:#f92672">=</span> chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">;</span>
-			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ans <span style="color:#f92672">&gt;</span> <span style="color:#f92672">(</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span> <span style="color:#f92672">-</span> digit<span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 10 <span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>                                        <span style="color:#75715e">// 初始化整型变量ans，初始值为0
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">/* 判断一般情况 */</span>
+		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>idx <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">&amp;&amp;</span> Character<span style="color:#f92672">.</span><span style="color:#a6e22e">isDigit</span><span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">])</span> <span style="color:#f92672">)</span> 		<span style="color:#f92672">{</span>  <span style="color:#75715e">// 当idx的值小于n，同时chars[idx]的值是数字时
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> digit <span style="color:#f92672">=</span> chars<span style="color:#f92672">[</span>idx<span style="color:#f92672">]</span> <span style="color:#f92672">-</span> <span style="color:#e6db74">&#39;0&#39;</span> <span style="color:#f92672">;</span>                                        <span style="color:#75715e">// 令digit的值等于    字符chars[idx]对应的ascaII码 -  字符0对应的ascall码
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>ans <span style="color:#f92672">&gt;</span> <span style="color:#f92672">(</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span> <span style="color:#f92672">-</span> digit<span style="color:#f92672">)</span> <span style="color:#f92672">/</span> 10 <span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
 				<span style="color:#75715e">// 本应该是ans * 10 + digit &gt; Integer.MAX_VALUE
 </span><span style="color:#75715e"></span>				<span style="color:#75715e">// 但是 *10 和 + digit 都有可能越界，所有都移动到右边去就可以了。
-</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">return</span> negative<span style="color:#f92672">?</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MIN_VALUE</span> <span style="color:#f92672">:</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span> <span style="color:#f92672">;</span>
-			<span style="color:#f92672">}</span>
-			ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">*</span> 10 <span style="color:#f92672">+</span> digit<span style="color:#f92672">;</span>
-			idx<span style="color:#f92672">++;</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">return</span> negative<span style="color:#f92672">?</span> <span style="color:#f92672">-</span>ans <span style="color:#f92672">:</span> ans<span style="color:#f92672">;</span>
-	<span style="color:#f92672">}</span>
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">return</span> negative<span style="color:#f92672">?</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MIN_VALUE</span> <span style="color:#f92672">:</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span> <span style="color:#f92672">;</span>         <span style="color:#75715e">// 如果越界了，就执行这个操作。
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+
+            <span style="color:#75715e">// 普通字符串串转整数算法
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">/*    本题考查的实际上就是字符串转换成整数的问题，或者说是要你自行实现atoi函数。那如何实现把表示整数的字符串正确地转换成整数呢？
+</span><span style="color:#75715e">			以&#34;345&#34;作为例子：
+</span><span style="color:#75715e">				当我们扫描到字符串的第一个字符&#39;3&#39;时，由于我们知道这是第一位，所以得到数字3。
+</span><span style="color:#75715e">				当扫描到第二个数字&#39;4&#39;时，而之前我们知道前面有一个3，所以便在后面加上一个数字4，那前面的3相当于30，因此得到数字：3*10+4=34。
+</span><span style="color:#75715e">				继续扫描到字符&#39;5&#39;，&#39;5&#39;的前面已经有了34，由于前面的34相当于340，加上后面扫描到的5，最终得到的数是：34*10+5=345。
+</span><span style="color:#75715e">				因此，此题的思路便是：每扫描到一个字符，我们便把在之前得到的数字乘以10，然后再加上当前字符表示的数字。                    */</span>
+
+			ans <span style="color:#f92672">=</span> ans <span style="color:#f92672">*</span> 10 <span style="color:#f92672">+</span> digit<span style="color:#f92672">;</span>                    <span style="color:#75715e">// 如果没越界，就直接套用字符串转整数算法。
+</span><span style="color:#75715e"></span>			idx<span style="color:#f92672">++;</span>                                           <span style="color:#75715e">// 判断下一个元素              
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> negative<span style="color:#f92672">?</span> <span style="color:#f92672">-</span>ans <span style="color:#f92672">:</span> ans<span style="color:#f92672">;</span>                <span style="color:#75715e">// 正负号对应不同结果
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
 
 	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
 		<span style="color:#66d9ef">int</span> result_1<span style="color:#f92672">;</span>
         
 		<span style="color:#75715e">// ？？？这个输出有点问题，和预设大的不一样 
-</span><span style="color:#75715e"></span>		<span style="color:#75715e">// String str = &#34;4193 with words&#34;  ;  
-</span><span style="color:#75715e"></span>		
-		String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;   -42&#34;</span>  <span style="color:#f92672">;</span>
-
+</span><span style="color:#75715e"></span>		 String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;4193 with words&#34;</span>  <span style="color:#f92672">;</span>  
+		
+		<span style="color:#75715e">//String str = &#34;   -42&#34;  ;
+</span><span style="color:#75715e"></span>
 		result_1 <span style="color:#f92672">=</span> myAtoi<span style="color:#f92672">(</span>str<span style="color:#f92672">)</span>  <span style="color:#f92672">;</span>
 		<span style="color:#75715e">// 调用形参时，不要加入类型备注，如“String&#34;;否则会出现： 错误，需要 ） =》 &#34;Solution.java:46: 错误: 需要&#39;)&#39;   &#34;
 </span><span style="color:#75715e"></span>		<span style="color:#75715e">// result_1 = myAtoi(String str)  ;  

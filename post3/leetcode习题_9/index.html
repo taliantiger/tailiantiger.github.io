@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>LeetCode习题_9 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode习题_9"/>
+<meta name="twitter:description" content="回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+示例 1:
+输入: 121
+输出: true
+示例 2:
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+示例 3:
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+进阶:
+你能不将整数转为字符串来解决这个问题吗？
+  普通解法思路：简单分析回文数，了解它的特点。把整数转为数组， 比较首末是否相同。  // 自己想的简单解法。 public class Solution { public static boolean isPalindrome(int x) { boolean flag = true ; // 初始化标识符 	int i = 0 ; // 初始化整型变量 i 	int j = 0; // 初始化变量 j 	int length_1 = 0; // 初始化变量length_1  // String."/>
+
+    <meta property="og:title" content="LeetCode习题_9" />
+<meta property="og:description" content="回文数 判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+示例 1:
+输入: 121
+输出: true
+示例 2:
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+示例 3:
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+进阶:
+你能不将整数转为字符串来解决这个问题吗？
+  普通解法思路：简单分析回文数，了解它的特点。把整数转为数组， 比较首末是否相同。  // 自己想的简单解法。 public class Solution { public static boolean isPalindrome(int x) { boolean flag = true ; // 初始化标识符 	int i = 0 ; // 初始化整型变量 i 	int j = 0; // 初始化变量 j 	int length_1 = 0; // 初始化变量length_1  // String." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_9/" />
+<meta property="article:published_time" content="2020-06-13T20:51:36+08:00" />
+<meta property="article:modified_time" content="2020-06-13T20:51:36+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">LeetCode习题_9</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 13, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="回文数">回文数</h4>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>示例 1:</p>
+<p>输入: 121</p>
+<p>输出: true</p>
+<p>示例 2:</p>
+<p>输入: -121</p>
+<p>输出: false</p>
+<p>解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p>
+<p>示例 3:</p>
+<p>输入: 10</p>
+<p>输出: false</p>
+<p>解释: 从右向左读, 为 01 。因此它不是一个回文数。</p>
+<p>进阶:</p>
+<p>你能不将整数转为字符串来解决这个问题吗？</p>
+<hr>
+<ul>
+<li>普通解法思路：简单分析回文数，了解它的特点。把整数转为数组，
+比较首末是否相同。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 自己想的简单解法。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>   <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isPalindrome</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>    <span style="color:#75715e">// 初始化标识符
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0  <span style="color:#f92672">;</span>          <span style="color:#75715e">// 初始化整型变量 i 
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>            <span style="color:#75715e">// 初始化变量 j 
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> length_1 <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>       <span style="color:#75715e">// 初始化变量length_1
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">// String.valueOf(x) : 把整型x转化为字符串型 。
+</span><span style="color:#75715e"></span>		 String str <span style="color:#f92672">=</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>x<span style="color:#f92672">);</span>        <span style="color:#75715e">// 把整型数字转为字符串型
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//  String str = Integer.toString(x);        // 把整型数字转为字符串型
+</span><span style="color:#75715e"></span>
+		<span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> chars <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">();</span>    <span style="color:#75715e">// 把字符串型数字转为char型数组数组
+</span><span style="color:#75715e"></span>		length_1 <span style="color:#f92672">=</span> chars<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>            <span style="color:#75715e">// 定义数组的大小
+</span><span style="color:#75715e"></span>		 j <span style="color:#f92672">=</span> length_1 <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+		 <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>           <span style="color:#75715e">// 如果整数是负数
+</span><span style="color:#75715e"></span>			flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>                    <span style="color:#75715e">// 并非回文数
+</span><span style="color:#75715e"></span>		 <span style="color:#f92672">}</span>
+       <span style="color:#75715e">// 注意这里条件限制要为i &lt;= length_1 / 2 - 1 ;而不是&lt; ,只有小于号时，会出现数字位数只有2时，直接跳过for循环的错误。
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// for (i = 0; i &lt; length_1 / 2 - 1 ; i++ )   {   
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> length_1 <span style="color:#f92672">/</span> 2 <span style="color:#f92672">-</span> 1 <span style="color:#f92672">;</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>    
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>chars<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> chars<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>     <span style="color:#75715e">// 如果首位相等
+</span><span style="color:#75715e"></span>				j<span style="color:#f92672">--;</span>                                 
+				<span style="color:#66d9ef">continue</span><span style="color:#f92672">;</span>                       <span style="color:#75715e">// 则不断分析下一个元素
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			<span style="color:#66d9ef">else</span>  <span style="color:#f92672">{</span>
+				flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+				<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>   <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> num_1 <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+		flag <span style="color:#f92672">=</span> isPalindrome<span style="color:#f92672">(</span>num_1<span style="color:#f92672">)</span> <span style="color:#f92672">;</span> 
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>flag<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>  
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<p><a href="https://leetcode-cn.com/problems/palindrome-number/">题目来源</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
