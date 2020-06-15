@@ -6,10 +6,70 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2020 20:51:36 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 12:27:10 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode习题_10</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_10/</link>
+      <pubDate>Mon, 15 Jun 2020 12:27:10 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_10/</guid>
+      <description>正则表达式匹配 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &amp;lsquo;.&amp;rsquo; 和 &amp;lsquo;*&amp;rsquo; 的正则表达式匹配。
+&amp;lsquo;.&amp;rsquo; 匹配任意单个字符
+&amp;lsquo;*&amp;rsquo; 匹配零个或多个前面的那一个元素
+所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+说明:
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
+示例 1:
+输入:
+s = &amp;ldquo;aa&amp;rdquo;
+p = &amp;ldquo;a&amp;rdquo;
+输出: false
+解释: &amp;ldquo;a&amp;rdquo; 无法匹配 &amp;ldquo;aa&amp;rdquo; 整个字符串。
+示例 2:
+输入:
+s = &amp;ldquo;aa&amp;rdquo;
+p = &amp;ldquo;a*&amp;rdquo;
+输出: true
+解释: 因为 &amp;lsquo;*&amp;rsquo; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &amp;lsquo;a&amp;rsquo;。因此，字符串 &amp;ldquo;aa&amp;rdquo; 可被视为 &amp;lsquo;a&amp;rsquo; 重复了一次。
+示例 3:
+输入:
+s = &amp;ldquo;ab&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>疯狂Java讲义_第七章</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_%E7%AC%AC%E4%B8%83%E7%AB%A0/</link>
+      <pubDate>Mon, 15 Jun 2020 08:34:28 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_%E7%AC%AC%E4%B8%83%E7%AB%A0/</guid>
+      <description>7.1.1 运行Java程序的参数 7.1.2 使用Scanner获取键盘输入   正则表达式：实质就是一种字符串匹配的模式(pattern)，可以用来检查一个串是否含有某种子串， 将匹配的子串替换或从某个串中取出符合某个条件的子串等。
+正则表达式实例: 一个字符串其实就是一个简单的正则表达式，例如 Hello World 正则表达式匹配 &amp;ldquo;Hello World&amp;rdquo; 字符串。
+.（点号）也是一个正则表达式，它匹配任何一个字符如：&amp;ldquo;a&amp;rdquo; 或 &amp;ldquo;1&amp;rdquo;。
+  声明一个对象，同时使对象实例化
+var sc = new Scanner(System.in); // System.in 代表用户手动输入
+  Scanner类提供了两个方法来扫描输入
+hasNextXxx() :是否还有下一个输入项。(has表示疑问的语气，即“是否”。)
+nextXxx() : 获取下一输入项。
+  </description>
+    </item>
+    
+    <item>
+      <title>剑指offer_1</title>
+      <link>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_1/</link>
+      <pubDate>Sun, 14 Jun 2020 20:43:42 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_1/</guid>
+      <description>面试题3（一）：找出数组中重复的数字 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，
+也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，
+那么对应的输出是重复的数字2或者3。
+ 分析：这道题看上去很简单，但是要注意审题。明白特点后，还要找到针对不同的特殊用例，采用特殊的处理方法。尤其是处理超出范围的特例。
+  基本的暴力解法  // 暴力解法 import java.util.Arrays; // 导入util包  public class repeat_num { public static void main(String[] args) { int[] arr = {2, 3, 1, 0, 2, 5, 3 }; int i = 0; int flag = 0; // 系统默认是没有重复的数字，把flag置为0。 	int length_1 = arr.length; // 注意这里调用length时，不要写成length( ); 	Arrays.sort(arr); // 对数组进行排序 	System.out.println(length_1); //	for (int i : arr ) { // 输出排序结果 //	System.</description>
+    </item>
     
     <item>
       <title>LeetCode习题_9</title>

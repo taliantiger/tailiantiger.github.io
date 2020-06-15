@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>LeetCode习题_10 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode习题_10"/>
+<meta name="twitter:description" content="正则表达式匹配 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &lsquo;.&rsquo; 和 &lsquo;*&rsquo; 的正则表达式匹配。
+&lsquo;.&rsquo; 匹配任意单个字符
+&lsquo;*&rsquo; 匹配零个或多个前面的那一个元素
+所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+说明:
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
+示例 1:
+输入:
+s = &ldquo;aa&rdquo;
+p = &ldquo;a&rdquo;
+输出: false
+解释: &ldquo;a&rdquo; 无法匹配 &ldquo;aa&rdquo; 整个字符串。
+示例 2:
+输入:
+s = &ldquo;aa&rdquo;
+p = &ldquo;a*&rdquo;
+输出: true
+解释: 因为 &lsquo;*&rsquo; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &lsquo;a&rsquo;。因此，字符串 &ldquo;aa&rdquo; 可被视为 &lsquo;a&rsquo; 重复了一次。
+示例 3:
+输入:
+s = &ldquo;ab&rdquo;"/>
+
+    <meta property="og:title" content="LeetCode习题_10" />
+<meta property="og:description" content="正则表达式匹配 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &lsquo;.&rsquo; 和 &lsquo;*&rsquo; 的正则表达式匹配。
+&lsquo;.&rsquo; 匹配任意单个字符
+&lsquo;*&rsquo; 匹配零个或多个前面的那一个元素
+所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
+说明:
+s 可能为空，且只包含从 a-z 的小写字母。
+p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
+示例 1:
+输入:
+s = &ldquo;aa&rdquo;
+p = &ldquo;a&rdquo;
+输出: false
+解释: &ldquo;a&rdquo; 无法匹配 &ldquo;aa&rdquo; 整个字符串。
+示例 2:
+输入:
+s = &ldquo;aa&rdquo;
+p = &ldquo;a*&rdquo;
+输出: true
+解释: 因为 &lsquo;*&rsquo; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &lsquo;a&rsquo;。因此，字符串 &ldquo;aa&rdquo; 可被视为 &lsquo;a&rsquo; 重复了一次。
+示例 3:
+输入:
+s = &ldquo;ab&rdquo;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_10/" />
+<meta property="article:published_time" content="2020-06-15T12:27:10+08:00" />
+<meta property="article:modified_time" content="2020-06-15T12:27:10+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">LeetCode习题_10</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 15, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="正则表达式匹配">正则表达式匹配</h4>
+<p>给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 &lsquo;.&rsquo; 和 &lsquo;*&rsquo; 的正则表达式匹配。</p>
+<p>&lsquo;.&rsquo; 匹配任意单个字符</p>
+<p>&lsquo;*&rsquo; 匹配零个或多个前面的那一个元素</p>
+<p>所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。</p>
+<p>说明:</p>
+<p>s 可能为空，且只包含从 a-z 的小写字母。</p>
+<p>p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。</p>
+<p>示例 1:</p>
+<p>输入:</p>
+<p>s = &ldquo;aa&rdquo;</p>
+<p>p = &ldquo;a&rdquo;</p>
+<p>输出: false</p>
+<p>解释: &ldquo;a&rdquo; 无法匹配 &ldquo;aa&rdquo; 整个字符串。</p>
+<p>示例 2:</p>
+<p>输入:</p>
+<p>s = &ldquo;aa&rdquo;</p>
+<p>p = &ldquo;a*&rdquo;</p>
+<p>输出: true</p>
+<p>解释: 因为 &lsquo;*&rsquo; 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 &lsquo;a&rsquo;。因此，字符串 &ldquo;aa&rdquo; 可被视为 &lsquo;a&rsquo; 重复了一次。</p>
+<p>示例 3:</p>
+<p>输入:</p>
+<p>s = &ldquo;ab&rdquo;</p>
+<p>p = &ldquo;.*&rdquo;</p>
+<p>输出: true</p>
+<p>解释: &ldquo;.<em>&rdquo; 表示可匹配零个或多个（'</em>'）任意字符（'.'）。</p>
+<p>示例 4:</p>
+<p>输入:</p>
+<p>s = &ldquo;aab&rdquo;</p>
+<p>p = &ldquo;c<em>a</em>b&rdquo;</p>
+<p>输出: true</p>
+<p>解释: 因为 &lsquo;*&rsquo; 表示零个或多个，这里 &lsquo;c&rsquo; 为 0 个, &lsquo;a&rsquo; 被重复一次。因此可以匹配字符串 &ldquo;aab&rdquo;。</p>
+<p>示例 5:</p>
+<p>输入:</p>
+<p>s = &ldquo;mississippi&rdquo;</p>
+<p>p = &ldquo;mis<em>is</em>p*.&rdquo;</p>
+<p>输出: false</p>
+<hr>
+<ul>
+<li>
+<p>分析：</p>
+<p>直接看代码，各种特殊情况，特殊分析，特殊处理。</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 代码虽然短，但是十分精炼，十分抽象，提到了正则表达式，还有递归调用自己本身的方法。
+</span><span style="color:#75715e">// 注意是要完全匹配，而不是部分匹配
+</span><span style="color:#75715e">// 例如 s：aab；  p ： cba*b  ==》 结果：不匹配，palse。
+</span><span style="color:#75715e">// 因为：不是p中包含了s就行，而是p和s要对应。c*a*b可以看做是c0a1b=&gt;aab，楼主的cba*b，不管怎样看，前面的cb都是不匹配的，cb都不会被消掉。
+</span><span style="color:#75715e">// 强调p:“不多也不少” 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// text 对应题目s，pattern 对应题目p
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 自己构建一个方法，名为isMatch,之后的代码，会不断递归调用自己这个isMatch方法。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span>  <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isMatch</span><span style="color:#f92672">(</span>String text<span style="color:#f92672">,</span> String pattern<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 判断pattern是否是空字符串
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+			<span style="color:#75715e">// 如果text也是空字符串，则返回true；否则返回false;
+</span><span style="color:#75715e"></span>			 <span style="color:#66d9ef">return</span> text<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// charAt() 方法用于返回指定索引处的字符。索引范围为从 0 到 length() - 1。At()代表&#34;在&#34;,即强调索引所在的位置
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// first_match：确保两组字符串，头个元素都相等且为非空；
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 分析第一个匹配的布尔值：首先text不能是空字符串 &amp;&amp; (pattern 的第0个元素 和 text的第0个元素要相等，或patter 的第0个元素是万能变换符——&#39;.&#39;）。
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">boolean</span> first_match <span style="color:#f92672">=</span> <span style="color:#f92672">(!</span>text<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> text<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#f92672">||</span> pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+		
+		<span style="color:#75715e">// 当pattern的长度大于等于2，同时“pattern[1]”为 &#39;*&#39; 时,则：
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;=</span> 2 <span style="color:#f92672">&amp;&amp;</span> pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;*&#39;</span> <span style="color:#f92672">)</span>	<span style="color:#f92672">{</span>   
+			<span style="color:#75715e">// substring()： 截取字符串
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// substring(2)： 截取字符串序数为2（包括序数2） 之后的所有字符
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// isMatch (text, pattern.substring(2) ）：整体分析test; 判断字符串pattern.substring(2) 是否整体包含了子字符串 text ，同时pattern.substring(2)“不多也不少&#34;
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 当调用isMatch方法时，自动会启用Java中正则表达式的特性，对字符串进行分析
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span> isMatch <span style="color:#f92672">(</span>text<span style="color:#f92672">,</span> pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> <span style="color:#f92672">)</span>  <span style="color:#f92672">||</span> 
+						<span style="color:#75715e">// isMatch(text.substring(1), pattern)  : 单独分析text.substring(1)；判断字符串pattern 是否整体包含了子字符串text.substring(1) ，同时pattern“不多也不少”
+</span><span style="color:#75715e"></span>				         <span style="color:#f92672">(</span>first_match <span style="color:#f92672">&amp;&amp;</span> isMatch<span style="color:#f92672">(</span>text<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>1<span style="color:#f92672">),</span> pattern<span style="color:#f92672">)</span>  <span style="color:#f92672">)</span>  <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>  <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> 
+			<span style="color:#75715e">// isMatch( text.substring(1), pattern.substring(1) ) ： 判断字符串pattern.substring(1)是否包整体含子字符串text.substring(1) ，同时pattern.substring(1) 不多也不少” 
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> first_match <span style="color:#f92672">&amp;&amp;</span> isMatch<span style="color:#f92672">(</span> text<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>1<span style="color:#f92672">),</span> pattern<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>  <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	  <span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">;</span>
+	  String s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;aab&#34;</span> <span style="color:#f92672">;</span>
+	  String p <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c*a*b&#34;</span>  <span style="color:#f92672">;</span>
+	      flag <span style="color:#f92672">=</span> isMatch<span style="color:#f92672">(</span>s <span style="color:#f92672">,</span> p <span style="color:#f92672">);</span>
+	  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;flag = &#34;</span> <span style="color:#f92672">+</span> flag<span style="color:#f92672">);</span>	
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><hr>
+<p><a href="https://leetcode-cn.com/problems/regular-expression-matching/">题目来源</a></p>
+<p><a href="https://leetcode-cn.com/problems/regular-expression-matching/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode/">题解来源</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
