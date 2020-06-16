@@ -6,10 +6,28 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jun 2020 12:27:10 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 20:04:10 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode例题_11</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%BE%8B%E9%A2%98_11/</link>
+      <pubDate>Tue, 16 Jun 2020 20:04:10 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%BE%8B%E9%A2%98_11/</guid>
+      <description>盛最多水的容器 给你 n 个非负整数 a1，a2，&amp;hellip;，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线， 垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线， 使得它们与 x 轴共同构成的容器可以容纳最多的水。
+说明：你不能倾斜容器，且 n 的值至少为 2。
+图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
+ 示例：
+输入：[1,8,6,2,5,4,8,3,7] 输出：49
+   分析 ： 关键在于找到挡板移动对面积影响的特点，没找到时很迷糊，找到后一个一个情况分析面积变化分类，就好理解了。
+即：向内移动短板才有可能导致面积增加。
+向内移动长板，只可能导致面积不变或减小。
+===》 类似博弈论思维，只要一直移动短挡板就可以了，这样才可能发现最大面积是多少。
+   public class Solution{ public static int maxArea(int[] str) { int i = 0 ; int length_1 = str.length; int max_area = 0 ; // 初始化最大面积 	int current_area = 0 ; // 初始化当前面积 	int j = length_1 - 1 ; // 初始化数组末尾的序数 	// 关键在于找到了两个挡板之间的特点，分析移动不同挡板时，对面积造成的的影响，有什么根本的原理。 	while (i &amp;lt;= length_1 - 1 &amp;amp;&amp;amp; i &amp;lt; j &amp;amp;&amp;amp; j &amp;gt;=1 ) { // 判断哪个挡板短 	if (str[i] &amp;lt;= str[j]) { // j - i : 底的长度 ； h : 最矮的那个挡板 	current_area = (j - i ) * str[i] ; i++; } else { current_area = (j - i ) * str[j]; j-- ; } // 替换最大的面积 	if (current_area &amp;gt; max_area) { max_area = current_area ; } } return max_area; } public static void main(String[] args) { int[] str_1 = new int[] {1,8,6,2,5,4,8,3,7} ; int result = 0; result = maxArea(str_1) ; System.</description>
+    </item>
     
     <item>
       <title>LeetCode习题_10</title>
@@ -105,7 +123,13 @@ nextXxx() : 获取下一输入项。
  “真棒，你们真是群优秀的人，可以看出你们的父母也是擅长讨论的聪明人！”
   大家靠利益的关系决定自己的行为，这大概就是“劣币驱逐良币”的原理之一吧， 爱情是这样，婚姻也是这样。
  更加敬佩刘慈欣对人性的洞察， 一边希望人类过得更好，一边讽刺自大无知愚昧利益交错的人类。
- 至于自己，在这个奇怪的世界上，为数不多感兴趣的事， 应该是“接下来有意思的技术会发展成什么样子呢？”。在漫漫宇宙长河中，人类的文明只是沧海一粟， 而我们普通人的时间，对于整个社会，只是一shit。100年后，有谁会记得我们，就算记得，1000年，10000年&amp;hellip;&amp;hellip; 过好自己，尽量处理好手头的事，人生，也就如此。</description>
+ 至于自己，在这个奇怪的世界上，为数不多感兴趣的事， 应该是“接下来有意思的技术会发展成什么样子呢？”。在漫漫宇宙长河中，人类的文明只是沧海一粟， 而我们普通人的时间，对于整个社会，只是一shit。100年后，有谁会记得我们，就算记得，1000年，10000年&amp;hellip;&amp;hellip; 过好自己，尽量处理好手头的事，人生，也就如此。
+ 20200616
+利益相关，趋之若鹜；利益无关，狗屁不是。  天天做实验，学一些毕业后永远不会用到的知识，真令我恶心，但是恶心一阵，该完成的还得完成。 可是当利益真正涉及到自身时，会发现，除了自己和家人，没有人在意你的利益受损，如果有，多半和你有利益关系。 人与人之间仿佛有条薛定谔的纽带，利益纽带，时而现身，时而隐藏。
+ 当刚开始大一的时候，大家都很多话聊，满足自己的好奇心，没有其他物质利益纠纷， 大家无私地发表观点看法，我也同样分享自己找到的软件，帮别人安装，不计较花费时间。 等到大三大四，除非当前有利益相关，否则即使之前有过帮助（利益相关），现在没有利益相关，则对曾经的队友一概不论。哪怕一句善意的提醒会吝惜， 真就此时没有利益相关，狗屁不是。
+ 劣币驱逐良币，社会就是这么真实，真的是太棒了，感谢大家的沉默，室友沉默，小组成员沉默，学委员沉默， 大家都一同沉默吧！毕竟我和他们毫无利益关系，狗屁不是。等真正出了社会也一样，你有什么本事？没有？滚蛋，狗屁不是的东西。
+ 曾以为可以放下盔甲，在校园里好好学习就好， 可曾想还是要学会厚黑学，感谢fucking ass hole学校让我们早点体会到社会的毒打， 感谢趋之若鹜者，狗屁不是的人又教会我们生活，fucking this ass hole life.
+ 在这个奇怪的社会里还是不可以放松下来，真就黑暗森林， 能做的也就是努力写好代码，毕业多赚些钱，确保下次被社会毒打时，能稍微没这么疼。</description>
     </item>
     
     <item>

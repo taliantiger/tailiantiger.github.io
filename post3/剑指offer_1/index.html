@@ -63,7 +63,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          2 min read
+          3 min read
         </div></div>
     </header>
     <div class="post-content">
@@ -173,6 +173,69 @@
 		 flag <span style="color:#f92672">=</span> find_repeat_num<span style="color:#f92672">(</span>arr<span style="color:#f92672">);</span>
 		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;flag = &#34;</span> <span style="color:#f92672">+</span> flag <span style="color:#f92672">);</span>
 	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><h3 id="升级版题目">升级版题目</h3>
+<p>题目二： 不修改数组找出重复的数组</p>
+<p>在一个长度为n+1的数组里的所有数字都在1~n的范围内，所以数组中至少有一个数字是重复的。请找出数组任意一个重复的数字，
+但不能修改输入的数组。例如，如果输入长度为8的数组{2,3,5,4,3,2,6,7},那么对应的输出是重复的数字2或者3 。</p>
+<ul>
+<li>分析： 找一组数据中的中位数，分两部分，运用二分法。</li>
+</ul>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//  有很多短小精悍的代码段看不懂，但是直接翻译为Java语句，可以正常运行
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Repeat_num_2</span> <span style="color:#f92672">{</span>    
+	<span style="color:#75715e">// ？？ 这里不知道要怎么修改，原本的numbers是调用指针。暂时用数组替代
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">repeat_num</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> numbers<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> length<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 开始前，导入数组的指针，和数组的长度
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>numbers <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>  <span style="color:#f92672">||</span> length <span style="color:#f92672">&lt;=</span> 0<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>   <span style="color:#75715e">// 当输入的数字一开始为空
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>                             <span style="color:#75715e">// 返回-1 代表无重复数字
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+																	
+		<span style="color:#66d9ef">int</span> start <span style="color:#f92672">=</span> 1 <span style="color:#f92672">;</span> <span style="color:#75715e">// 初始化变量start 值为1
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> end <span style="color:#f92672">=</span> length <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>     <span style="color:#75715e">// 初始化变量end 的值为length - 1 ;
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">&gt;=</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 当结尾的值大于开头的值的时候
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> middle <span style="color:#f92672">=</span> <span style="color:#f92672">(</span> <span style="color:#f92672">(</span> end <span style="color:#f92672">-</span> start<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;&gt;</span> 1<span style="color:#f92672">)</span>  <span style="color:#f92672">+</span> start <span style="color:#f92672">;</span>  <span style="color:#75715e">//  定义中位数middle ,运用了找中位数的小算法
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> countRange<span style="color:#f92672">(</span>numbers<span style="color:#f92672">,</span> length<span style="color:#f92672">,</span> start<span style="color:#f92672">,</span> middle <span style="color:#f92672">);</span>    <span style="color:#75715e">// 调用自己构建的方法。
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 和二分法有何关系
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">==</span> start<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>  
+				<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>count <span style="color:#f92672">&gt;</span> 1 <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					<span style="color:#66d9ef">return</span> start <span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+				<span style="color:#66d9ef">else</span>    <span style="color:#f92672">{</span>
+					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>   
+			<span style="color:#75715e">// ??? 这是做什么？？ 
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>count <span style="color:#f92672">&gt;</span> <span style="color:#f92672">(</span>middle <span style="color:#f92672">-</span> start <span style="color:#f92672">+</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				end <span style="color:#f92672">=</span> middle <span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+				start <span style="color:#f92672">=</span> middle <span style="color:#f92672">+</span> 1 <span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1 <span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+   <span style="color:#75715e">// ？？ 这里也不知道如何修改，原本的numbers也是调用指针
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">countRange</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> numbers<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> length<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> start<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> end <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>numbers <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">// 判断numbers数组是否为空
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> 0 <span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>  
+		<span style="color:#66d9ef">int</span>  count <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>   <span style="color:#75715e">// 初始化count为 0 ；
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> length <span style="color:#f92672">;</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>numbers<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&gt;=</span>start <span style="color:#f92672">&amp;&amp;</span> numbers<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;=</span> end <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>   <span style="color:#75715e">// 判断numbers数组元素是否再start 和 end 之间
+</span><span style="color:#75715e"></span>				<span style="color:#f92672">++</span>count<span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> count <span style="color:#f92672">;</span> 
+	<span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> 	<span style="color:#f92672">{</span>  
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> <span style="color:#f92672">{</span>2<span style="color:#f92672">,</span>1<span style="color:#f92672">,</span> 5<span style="color:#f92672">,</span> 4<span style="color:#f92672">,</span> 7<span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 6<span style="color:#f92672">,</span> 7<span style="color:#f92672">}</span>   <span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> length_1 <span style="color:#f92672">=</span> 8 <span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> 100<span style="color:#f92672">;</span>
+	    flag <span style="color:#f92672">=</span> repeat_num<span style="color:#f92672">(</span>arr<span style="color:#f92672">,</span> length_1<span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;flag = &#34;</span> <span style="color:#f92672">+</span> flag<span style="color:#f92672">);</span>
+		<span style="color:#75715e">// System.out.println(&#34;Hello World!&#34;);
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 
 </code></pre></div>
