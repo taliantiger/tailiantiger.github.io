@@ -6,10 +6,30 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jun 2020 20:04:10 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 20:59:48 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LeetCode习题_12</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_12/</link>
+      <pubDate>Wed, 17 Jun 2020 20:59:48 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_12/</guid>
+      <description>整数转罗马数字 罗马数字包含以下七种字符： I， V， X， L，C，D 和 M。
+字符 数值
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
+例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</description>
+    </item>
     
     <item>
       <title>LeetCode例题_11</title>
@@ -129,7 +149,8 @@ nextXxx() : 获取下一输入项。
  当刚开始大一的时候，大家都很多话聊，满足自己的好奇心，没有其他物质利益纠纷， 大家无私地发表观点看法，我也同样分享自己找到的软件，帮别人安装，不计较花费时间。 等到大三大四，除非当前有利益相关，否则即使之前有过帮助（利益相关），现在没有利益相关，则对曾经的队友一概不论。哪怕一句善意的提醒会吝惜， 真就此时没有利益相关，狗屁不是。
  劣币驱逐良币，社会就是这么真实，真的是太棒了，感谢大家的沉默，室友沉默，小组成员沉默，学委员沉默， 大家都一同沉默吧！毕竟我和他们毫无利益关系，狗屁不是。等真正出了社会也一样，你有什么本事？没有？滚蛋，狗屁不是的东西。
  曾以为可以放下盔甲，在校园里好好学习就好， 可曾想还是要学会厚黑学，感谢fucking ass hole学校让我们早点体会到社会的毒打， 感谢趋之若鹜者，狗屁不是的人又教会我们生活，fucking this ass hole life.
- 在这个奇怪的社会里还是不可以放松下来，真就黑暗森林， 能做的也就是努力写好代码，毕业多赚些钱，确保下次被社会毒打时，能稍微没这么疼。</description>
+ 在这个奇怪的社会里还是不可以放松下来，真就黑暗森林， 能做的也就是努力写好代码，毕业多赚些钱，确保下次被社会毒打时，能稍微没这么疼。
+ 人心这东西真可怕，比电脑难修多了。到最后，舞台上剩下的只有刁钻客户和奸商。</description>
     </item>
     
     <item>
