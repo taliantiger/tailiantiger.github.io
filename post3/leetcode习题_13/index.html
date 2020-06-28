@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>LeetCode习题_13 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LeetCode习题_13"/>
+<meta name="twitter:description" content="罗马数字转整数 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+字符 数值
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X &#43; II 。 27 写做 XXVII, 即为 XX &#43; V &#43; II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。"/>
+
+    <meta property="og:title" content="LeetCode习题_13" />
+<meta property="og:description" content="罗马数字转整数 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+字符 数值
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X &#43; II 。 27 写做 XXVII, 即为 XX &#43; V &#43; II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_13/" />
+<meta property="article:published_time" content="2020-06-20T20:24:47+08:00" />
+<meta property="article:modified_time" content="2020-06-20T20:24:47+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">LeetCode习题_13</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 20, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="罗马数字转整数">罗马数字转整数</h4>
+<p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
+<p>字符          数值</p>
+<p>I             1</p>
+<p>V             5</p>
+<p>X             10</p>
+<p>L             50</p>
+<p>C             100</p>
+<p>D             500</p>
+<p>M             1000
+例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<p>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</p>
+<p>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </p>
+<p>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</p>
+<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<p>示例 1:</p>
+<p>输入: &ldquo;III&rdquo;</p>
+<p>输出: 3</p>
+<p>示例 2:</p>
+<p>输入: &ldquo;IV&rdquo;</p>
+<p>输出: 4</p>
+<p>示例 3:</p>
+<p>输入: &ldquo;IX&rdquo;</p>
+<p>输出: 9</p>
+<p>示例 4:</p>
+<p>输入: &ldquo;LVIII&rdquo;</p>
+<p>输出: 58</p>
+<p>解释: L = 50, V= 5, III = 3.</p>
+<p>示例 5:</p>
+<p>输入: &ldquo;MCMXCIV&rdquo;</p>
+<p>输出: 1994</p>
+<p>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p>
+<hr>
+<ul>
+<li>分析： 利用hashmap，或自己构建一个switch相关的方法返回对应的值。</li>
+</ul>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.*<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">romanToInt</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 初始化变量sum
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// charAt() : 用于返回指定索引处的字符。==&gt; 返回字符串序号为0时对应的字符值
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 初始化变量preNum，令变量preNum对应的值为字符串首个字母对应的数字值
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> preNum <span style="color:#f92672">=</span> getValue<span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 从i = 1的序数开始循环，不断自加，直到序数最后末尾
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 初始化变量num，令变量num对应的值为 字符串序数位i对应的数字值
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> getValue<span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+			<span style="color:#75715e">// 判断“先驱值”是否小于num。
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>preNum <span style="color:#f92672">&lt;</span> num <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 小则减去“先驱值”prenum
+</span><span style="color:#75715e"></span>				sum <span style="color:#f92672">-=</span> preNum<span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 否则加上&#34;先驱值“ prenum
+</span><span style="color:#75715e"></span>				sum <span style="color:#f92672">+=</span> preNum<span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 不断用num的值，来替代掉初始”先驱值“preNum
+</span><span style="color:#75715e"></span>			preNum <span style="color:#f92672">=</span> num<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#75715e">// 加上最后的”先驱值“
+</span><span style="color:#75715e"></span>		sum <span style="color:#f92672">+=</span> preNum<span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 返回最终结果
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> sum<span style="color:#f92672">;</span> 
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// private int getValue(char ch) {
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 构建方法，拥有字符值和数字的对应关系。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getValue</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> ch<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+		<span style="color:#66d9ef">switch</span> <span style="color:#f92672">(</span>ch<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;I&#39;</span>  <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 1 <span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;V&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 5<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;X&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 10<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;L&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 50<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;C&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 100<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;D&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 500<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;M&#39;</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 1000<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">default</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> 0 <span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// String str = &#34;IV&#34; ;
+</span><span style="color:#75715e"></span>		String str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MXCI&#34;</span> <span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+		result <span style="color:#f92672">=</span> romanToInt<span style="color:#f92672">(</span>str<span style="color:#f92672">);</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;result = &#34;</span> <span style="color:#f92672">+</span> result <span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<p><a href="https://leetcode-cn.com/problems/roman-to-integer/">题目来源</a></p>
+<p><a href="https://leetcode-cn.com/problems/roman-to-integer/solution/yong-shi-9993nei-cun-9873jian-dan-jie-fa-by-donesp/">题解来源</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

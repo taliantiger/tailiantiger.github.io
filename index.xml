@@ -6,10 +6,56 @@
     <description>Recent content on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jun 2020 20:59:48 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 15:17:56 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>疯狂Java讲义_Chapter4_编写控制台的五子棋游戏</title>
+      <link>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_chapter4_%E7%BC%96%E5%86%99%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Sat, 27 Jun 2020 15:17:56 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_chapter4_%E7%BC%96%E5%86%99%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
+      <description>编写控制台的五子棋游戏 昨天复习了下《疯狂Java讲义》，完成前几章的习题， 现在基本完成了控制台五子棋游戏的编写，能够按照要求
+  保证用户下和电脑下的棋上不能已经有棋子
+  判断横、竖、左斜、右斜有是否有5个棋连在一起，从而判定胜负
+  来运行。
+import java.io.*; // 导入随机包 import java.util.Random; /** * Description: * &amp;lt;br/&amp;gt;网站: &amp;lt;a href=&amp;#34;http://www.crazyit.org&amp;#34;&amp;gt;疯狂Java联盟&amp;lt;/a&amp;gt; * &amp;lt;br/&amp;gt;Copyright (C), 2001-2016, Yeeku.H.Lee * &amp;lt;br/&amp;gt;This program is protected by copyright laws. * &amp;lt;br/&amp;gt;Program Name: * &amp;lt;br/&amp;gt;Date: * @author Yeeku.H.Lee kongyeeku@163.com * @version 1.0 */ // 下面全部的方法函数都在Gobang这个类里 public class Gobang { // 定义棋盘的大小 	private static int BOARD_SIZE = 15; // 定义一个二维数组来充当棋盘 	private String[][] board; // 构造原始棋盘 	public void initBoard() { // 初始化棋盘数组 	board = new String[BOARD_SIZE][BOARD_SIZE]; // 把每个元素赋为&amp;#34;╋&amp;#34;，用于在控制台画出棋盘 	for (int i = 0 ; i &amp;lt; BOARD_SIZE ; i++) { for ( int j = 0 ; j &amp;lt; BOARD_SIZE ; j++) { board[i][j] = &amp;#34;╋&amp;#34;; } } } // 在控制台输出棋盘的方法 	public void printBoard() { // 打印每个数组元素 	for (int i = 0 ; i &amp;lt; BOARD_SIZE ; i++) { for ( int j = 0 ; j &amp;lt; BOARD_SIZE ; j++) { // 打印数组元素后不换行 	System.</description>
+    </item>
+    
+    <item>
+      <title>LeetCode习题_13</title>
+      <link>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_13/</link>
+      <pubDate>Sat, 20 Jun 2020 20:24:47 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/leetcode%E4%B9%A0%E9%A2%98_13/</guid>
+      <description>罗马数字转整数 罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+字符 数值
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000 例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做 XXVII, 即为 XX + V + II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</description>
+    </item>
+    
+    <item>
+      <title>剑指offer_面试题4</title>
+      <link>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%984/</link>
+      <pubDate>Fri, 19 Jun 2020 20:19:55 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%984/</guid>
+      <description>二维数组中的查找  在一个二维数组中，每一行都按照从左往右递增的顺序排序， 每一列都按照从上到下递增的顺序排列。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+   分析：能不能通过具体例子找出其中的规律，是能否解决这个问题的关键；
+从二维数组的右上角开始分析，就能找到查找的规律，从而找到解决问题的突破口。
+我们可以根据行号和列号计算出相对于数组地址的偏移量，从而找到对应的元素。
+   通过Java来实现的代码；
+// 二维数组中的查找 public class Solution_3 { public static boolean Find_1(int[][] str , int num) { // 初始化数组行数和列数 	int rows = str.length ; // System.out.println(&amp;#34;rows = &amp;#34; + rows); 	int columns = str[0].length; // System.out.println(&amp;#34;columns = &amp;#34; + columns); 	// 初始化标志符 	boolean flag = false ; if (str != null &amp;amp;&amp;amp; rows &amp;gt; 0 &amp;amp;&amp;amp; columns &amp;gt; 0) { // 初始化row（定位符，类似i） 的值为0 	int row = 0; // 初始化column（定位符，类似j）的值为列数的值 - 1 	int column = columns - 1; // 当row 的值小于行数,同时column的值大于0 	while (row &amp;lt; rows &amp;amp;&amp;amp; column &amp;gt;= 0) { if (str[row][column] == num) { flag = true ; break; } else if (num &amp;lt; str[row][column] ) { column--; } else { row++; } } } return flag ; } public static void main(String[] args) { int[][] str_1 = new int[][] { {1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15} }; int num_1 = 8 ; boolean flag_1 = false ; flag_1 = Find_1(str_1, num_1) ; System.</description>
+    </item>
     
     <item>
       <title>LeetCode习题_12</title>
@@ -150,7 +196,10 @@ nextXxx() : 获取下一输入项。
  劣币驱逐良币，社会就是这么真实，真的是太棒了，感谢大家的沉默，室友沉默，小组成员沉默，学委员沉默， 大家都一同沉默吧！毕竟我和他们毫无利益关系，狗屁不是。等真正出了社会也一样，你有什么本事？没有？滚蛋，狗屁不是的东西。
  曾以为可以放下盔甲，在校园里好好学习就好， 可曾想还是要学会厚黑学，感谢fucking ass hole学校让我们早点体会到社会的毒打， 感谢趋之若鹜者，狗屁不是的人又教会我们生活，fucking this ass hole life.
  在这个奇怪的社会里还是不可以放松下来，真就黑暗森林， 能做的也就是努力写好代码，毕业多赚些钱，确保下次被社会毒打时，能稍微没这么疼。
- 人心这东西真可怕，比电脑难修多了。到最后，舞台上剩下的只有刁钻客户和奸商。</description>
+ 人心这东西真可怕，比电脑难修多了。到最后，舞台上剩下的只有刁钻客户和奸商。
+ 20200618
+见人说人话，见鬼说鬼话 余春明是少有的有思想深度的人，今天倒是领教到了看破不说破的原理。 面对不同的人，看是否与自己相关，就算有利益相关，有时也要看屁不说破，
+有的人喜欢听好话，因为听着舒服； 有的人喜欢听真话，因为能反省。</description>
     </item>
     
     <item>

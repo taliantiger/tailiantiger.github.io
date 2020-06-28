@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>剑指offer_面试题4 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="剑指offer_面试题4"/>
+<meta name="twitter:description" content="二维数组中的查找  在一个二维数组中，每一行都按照从左往右递增的顺序排序， 每一列都按照从上到下递增的顺序排列。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+   分析：能不能通过具体例子找出其中的规律，是能否解决这个问题的关键；
+从二维数组的右上角开始分析，就能找到查找的规律，从而找到解决问题的突破口。
+我们可以根据行号和列号计算出相对于数组地址的偏移量，从而找到对应的元素。
+   通过Java来实现的代码；
+// 二维数组中的查找 public class Solution_3 { public static boolean Find_1(int[][] str , int num) { // 初始化数组行数和列数 	int rows = str.length ; // System.out.println(&#34;rows = &#34; &#43; rows); 	int columns = str[0].length; // System.out.println(&#34;columns = &#34; &#43; columns); 	// 初始化标志符 	boolean flag = false ; if (str != null &amp;&amp; rows &gt; 0 &amp;&amp; columns &gt; 0) { // 初始化row（定位符，类似i） 的值为0 	int row = 0; // 初始化column（定位符，类似j）的值为列数的值 - 1 	int column = columns - 1; // 当row 的值小于行数,同时column的值大于0 	while (row &lt; rows &amp;&amp; column &gt;= 0) { if (str[row][column] == num) { flag = true ; break; } else if (num &lt; str[row][column] ) { column--; } else { row&#43;&#43;; } } } return flag ; } public static void main(String[] args) { int[][] str_1 = new int[][] { {1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15} }; int num_1 = 8 ; boolean flag_1 = false ; flag_1 = Find_1(str_1, num_1) ; System."/>
+
+    <meta property="og:title" content="剑指offer_面试题4" />
+<meta property="og:description" content="二维数组中的查找  在一个二维数组中，每一行都按照从左往右递增的顺序排序， 每一列都按照从上到下递增的顺序排列。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+   分析：能不能通过具体例子找出其中的规律，是能否解决这个问题的关键；
+从二维数组的右上角开始分析，就能找到查找的规律，从而找到解决问题的突破口。
+我们可以根据行号和列号计算出相对于数组地址的偏移量，从而找到对应的元素。
+   通过Java来实现的代码；
+// 二维数组中的查找 public class Solution_3 { public static boolean Find_1(int[][] str , int num) { // 初始化数组行数和列数 	int rows = str.length ; // System.out.println(&#34;rows = &#34; &#43; rows); 	int columns = str[0].length; // System.out.println(&#34;columns = &#34; &#43; columns); 	// 初始化标志符 	boolean flag = false ; if (str != null &amp;&amp; rows &gt; 0 &amp;&amp; columns &gt; 0) { // 初始化row（定位符，类似i） 的值为0 	int row = 0; // 初始化column（定位符，类似j）的值为列数的值 - 1 	int column = columns - 1; // 当row 的值小于行数,同时column的值大于0 	while (row &lt; rows &amp;&amp; column &gt;= 0) { if (str[row][column] == num) { flag = true ; break; } else if (num &lt; str[row][column] ) { column--; } else { row&#43;&#43;; } } } return flag ; } public static void main(String[] args) { int[][] str_1 = new int[][] { {1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15} }; int num_1 = 8 ; boolean flag_1 = false ; flag_1 = Find_1(str_1, num_1) ; System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%984/" />
+<meta property="article:published_time" content="2020-06-19T20:19:55+08:00" />
+<meta property="article:modified_time" content="2020-06-19T20:19:55+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">剑指offer_面试题4</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 19, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="二维数组中的查找">二维数组中的查找</h4>
+<p>       在一个二维数组中，每一行都按照从左往右递增的顺序排序，
+每一列都按照从上到下递增的顺序排列。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<hr>
+<ul>
+<li>
+<p>分析：能不能通过具体例子找出其中的规律，是能否解决这个问题的关键；</p>
+<p>从二维数组的右上角开始分析，就能找到查找的规律，从而找到解决问题的突破口。</p>
+<p>我们可以根据行号和列号计算出相对于数组地址的偏移量，从而找到对应的元素。</p>
+</li>
+</ul>
+<hr>
+<p>通过Java来实现的代码；</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 二维数组中的查找
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span>  <span style="color:#a6e22e">Solution_3</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">Find_1</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> str <span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> num<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 初始化数组行数和列数
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> rows <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// System.out.println(&#34;rows = &#34; + rows);
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> columns <span style="color:#f92672">=</span> str<span style="color:#f92672">[</span>0<span style="color:#f92672">].</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+		<span style="color:#75715e">// System.out.println(&#34;columns = &#34; + columns);
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 初始化标志符
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>str <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> rows <span style="color:#f92672">&gt;</span> 0 <span style="color:#f92672">&amp;&amp;</span> columns <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 初始化row（定位符，类似i） 的值为0
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> row <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// 初始化column（定位符，类似j）的值为列数的值 - 1
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> column <span style="color:#f92672">=</span> columns <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// 当row 的值小于行数,同时column的值大于0
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>row <span style="color:#f92672">&lt;</span> rows <span style="color:#f92672">&amp;&amp;</span> column <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>str<span style="color:#f92672">[</span>row<span style="color:#f92672">][</span>column<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> num<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+					<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+				<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>num <span style="color:#f92672">&lt;</span> str<span style="color:#f92672">[</span>row<span style="color:#f92672">][</span>column<span style="color:#f92672">]</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					column<span style="color:#f92672">--;</span>
+				<span style="color:#f92672">}</span>
+				<span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+					row<span style="color:#f92672">++;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">return</span> flag <span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> str_1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> <span style="color:#f92672">{</span> <span style="color:#f92672">{</span>1<span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 8<span style="color:#f92672">,</span> 9<span style="color:#f92672">},</span> <span style="color:#f92672">{</span>2<span style="color:#f92672">,</span> 4<span style="color:#f92672">,</span> 9<span style="color:#f92672">,</span> 12<span style="color:#f92672">},</span> <span style="color:#f92672">{</span>4<span style="color:#f92672">,</span> 7<span style="color:#f92672">,</span> 10<span style="color:#f92672">,</span> 13<span style="color:#f92672">},</span> <span style="color:#f92672">{</span>6<span style="color:#f92672">,</span> 8<span style="color:#f92672">,</span> 11<span style="color:#f92672">,</span> 15<span style="color:#f92672">}</span> <span style="color:#f92672">};</span>
+		<span style="color:#66d9ef">int</span> num_1 <span style="color:#f92672">=</span> 8
+			<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">boolean</span> flag_1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">;</span>
+		flag_1 <span style="color:#f92672">=</span> Find_1<span style="color:#f92672">(</span>str_1<span style="color:#f92672">,</span> num_1<span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;flag_1 = &#34;</span> <span style="color:#f92672">+</span> flag_1<span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

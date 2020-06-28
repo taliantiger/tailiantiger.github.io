@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>疯狂Java讲义_Chapter4_编写控制台的五子棋游戏 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="疯狂Java讲义_Chapter4_编写控制台的五子棋游戏"/>
+<meta name="twitter:description" content="编写控制台的五子棋游戏 昨天复习了下《疯狂Java讲义》，完成前几章的习题， 现在基本完成了控制台五子棋游戏的编写，能够按照要求
+  保证用户下和电脑下的棋上不能已经有棋子
+  判断横、竖、左斜、右斜有是否有5个棋连在一起，从而判定胜负
+  来运行。
+import java.io.*; // 导入随机包 import java.util.Random; /** * Description: * &lt;br/&gt;网站: &lt;a href=&#34;http://www.crazyit.org&#34;&gt;疯狂Java联盟&lt;/a&gt; * &lt;br/&gt;Copyright (C), 2001-2016, Yeeku.H.Lee * &lt;br/&gt;This program is protected by copyright laws. * &lt;br/&gt;Program Name: * &lt;br/&gt;Date: * @author Yeeku.H.Lee kongyeeku@163.com * @version 1.0 */ // 下面全部的方法函数都在Gobang这个类里 public class Gobang { // 定义棋盘的大小 	private static int BOARD_SIZE = 15; // 定义一个二维数组来充当棋盘 	private String[][] board; // 构造原始棋盘 	public void initBoard() { // 初始化棋盘数组 	board = new String[BOARD_SIZE][BOARD_SIZE]; // 把每个元素赋为&#34;╋&#34;，用于在控制台画出棋盘 	for (int i = 0 ; i &lt; BOARD_SIZE ; i&#43;&#43;) { for ( int j = 0 ; j &lt; BOARD_SIZE ; j&#43;&#43;) { board[i][j] = &#34;╋&#34;; } } } // 在控制台输出棋盘的方法 	public void printBoard() { // 打印每个数组元素 	for (int i = 0 ; i &lt; BOARD_SIZE ; i&#43;&#43;) { for ( int j = 0 ; j &lt; BOARD_SIZE ; j&#43;&#43;) { // 打印数组元素后不换行 	System."/>
+
+    <meta property="og:title" content="疯狂Java讲义_Chapter4_编写控制台的五子棋游戏" />
+<meta property="og:description" content="编写控制台的五子棋游戏 昨天复习了下《疯狂Java讲义》，完成前几章的习题， 现在基本完成了控制台五子棋游戏的编写，能够按照要求
+  保证用户下和电脑下的棋上不能已经有棋子
+  判断横、竖、左斜、右斜有是否有5个棋连在一起，从而判定胜负
+  来运行。
+import java.io.*; // 导入随机包 import java.util.Random; /** * Description: * &lt;br/&gt;网站: &lt;a href=&#34;http://www.crazyit.org&#34;&gt;疯狂Java联盟&lt;/a&gt; * &lt;br/&gt;Copyright (C), 2001-2016, Yeeku.H.Lee * &lt;br/&gt;This program is protected by copyright laws. * &lt;br/&gt;Program Name: * &lt;br/&gt;Date: * @author Yeeku.H.Lee kongyeeku@163.com * @version 1.0 */ // 下面全部的方法函数都在Gobang这个类里 public class Gobang { // 定义棋盘的大小 	private static int BOARD_SIZE = 15; // 定义一个二维数组来充当棋盘 	private String[][] board; // 构造原始棋盘 	public void initBoard() { // 初始化棋盘数组 	board = new String[BOARD_SIZE][BOARD_SIZE]; // 把每个元素赋为&#34;╋&#34;，用于在控制台画出棋盘 	for (int i = 0 ; i &lt; BOARD_SIZE ; i&#43;&#43;) { for ( int j = 0 ; j &lt; BOARD_SIZE ; j&#43;&#43;) { board[i][j] = &#34;╋&#34;; } } } // 在控制台输出棋盘的方法 	public void printBoard() { // 打印每个数组元素 	for (int i = 0 ; i &lt; BOARD_SIZE ; i&#43;&#43;) { for ( int j = 0 ; j &lt; BOARD_SIZE ; j&#43;&#43;) { // 打印数组元素后不换行 	System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/%E7%96%AF%E7%8B%82java%E8%AE%B2%E4%B9%89_chapter4_%E7%BC%96%E5%86%99%E6%8E%A7%E5%88%B6%E5%8F%B0%E7%9A%84%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/" />
+<meta property="article:published_time" content="2020-06-27T15:17:56+08:00" />
+<meta property="article:modified_time" content="2020-06-27T15:17:56+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">疯狂Java讲义_Chapter4_编写控制台的五子棋游戏</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 27, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          7 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="编写控制台的五子棋游戏">编写控制台的五子棋游戏</h4>
+<p>昨天复习了下《疯狂Java讲义》，完成前几章的习题，
+现在基本完成了控制台五子棋游戏的编写，能够按照要求</p>
+<ul>
+<li>
+<p>保证用户下和电脑下的棋上不能已经有棋子</p>
+</li>
+<li>
+<p>判断横、竖、左斜、右斜有是否有5个棋连在一起，从而判定胜负</p>
+</li>
+</ul>
+<p>来运行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.*<span style="color:#f92672">;</span>
+<span style="color:#75715e">// 导入随机包
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> java.util.Random<span style="color:#f92672">;</span>
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Description:
+</span><span style="color:#75715e"> * &lt;br/&gt;网站: &lt;a href=&#34;http://www.crazyit.org&#34;&gt;疯狂Java联盟&lt;/a&gt;
+</span><span style="color:#75715e"> * &lt;br/&gt;Copyright (C), 2001-2016, Yeeku.H.Lee
+</span><span style="color:#75715e"> * &lt;br/&gt;This program is protected by copyright laws.
+</span><span style="color:#75715e"> * &lt;br/&gt;Program Name:
+</span><span style="color:#75715e"> * &lt;br/&gt;Date:
+</span><span style="color:#75715e"> * @author Yeeku.H.Lee kongyeeku@163.com
+</span><span style="color:#75715e"> * @version 1.0
+</span><span style="color:#75715e"> */</span>
+
+<span style="color:#75715e">// 下面全部的方法函数都在Gobang这个类里
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Gobang</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">// 定义棋盘的大小
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> BOARD_SIZE <span style="color:#f92672">=</span> 15<span style="color:#f92672">;</span>
+	<span style="color:#75715e">// 定义一个二维数组来充当棋盘
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">private</span> String<span style="color:#f92672">[][]</span> board<span style="color:#f92672">;</span>
+
+	<span style="color:#75715e">// 构造原始棋盘
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initBoard</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 初始化棋盘数组
+</span><span style="color:#75715e"></span>		board <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[</span>BOARD_SIZE<span style="color:#f92672">][</span>BOARD_SIZE<span style="color:#f92672">];</span>
+		<span style="color:#75715e">// 把每个元素赋为&#34;╋&#34;，用于在控制台画出棋盘
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> BOARD_SIZE <span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> BOARD_SIZE <span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span>
+			<span style="color:#f92672">{</span>
+				board<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;╋&#34;</span><span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+
+	<span style="color:#75715e">// 在控制台输出棋盘的方法
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printBoard</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 打印每个数组元素
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> BOARD_SIZE <span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> BOARD_SIZE <span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span>
+			<span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 打印数组元素后不换行
+</span><span style="color:#75715e"></span>				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]);</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 每打印完一行数组元素后输出一个换行符
+</span><span style="color:#75715e"></span>			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\n&#34;</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">}</span>
+	
+	<span style="color:#75715e">// 判断谁获胜了
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 根据调用的Symbol不同，来判断电脑赢还是玩家赢
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">judgematch</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[][]</span> board<span style="color:#f92672">,</span> String symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 判断水平上是否有5个相同符号连在一块
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 先从头开始遍历
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> 
+		<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> times <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">boolean</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 初始化字符串变量current的值
+</span><span style="color:#75715e"></span>		String current <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 一行一行分析
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 14<span style="color:#f92672">;</span> i<span style="color:#f92672">++</span>  <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一行刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span> 13<span style="color:#f92672">;</span> j<span style="color:#f92672">++</span>  <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">;</span>
+				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					<span style="color:#75715e">// 每次遇到标识符，就让统计变量sum加一
+</span><span style="color:#75715e"></span>					sum<span style="color:#f92672">++;</span>
+					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+				<span style="color:#f92672">}</span>
+		  <span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">// 一列一列分析
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span> 14<span style="color:#f92672">;</span> j<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一列刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> 13<span style="color:#f92672">;</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			    current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>j<span style="color:#f92672">];</span>
+				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					<span style="color:#75715e">// 每次遇到标识符，就让统计变量sum加1
+</span><span style="color:#75715e"></span>					sum<span style="color:#f92672">++;</span>
+					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+		
+		<span style="color:#75715e">// 这个
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 中心线分析
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 先分析“左斜”的上半部分
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// i 始终等于0 ，j 不断累加移动
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 注意，其他3个和这个差不多，根据这个改变
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span> 14<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一斜行刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// i 是几，times 就可以移动几次
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 构造a ,b 来代替i, j 移动
+</span><span style="color:#75715e"></span>			a <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+			b <span style="color:#f92672">=</span> j<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>times <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> times <span style="color:#f92672">&lt;=</span> j <span style="color:#f92672">-</span> 1 <span style="color:#f92672">;</span> times<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 确定刚开始的当前的的字符串；
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// j的值为x，就要分析x次current;
+</span><span style="color:#75715e"></span>				current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>a<span style="color:#f92672">][</span>b<span style="color:#f92672">]</span> <span style="color:#f92672">;</span>
+				<span style="color:#75715e">// 判断当前子和期望的子是否相同，相同则
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum<span style="color:#f92672">++;</span>      
+					<span style="color:#75715e">// 判断是否5子相连
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						 flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						 <span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// ！！！！！！
+</span><span style="color:#75715e"></span>					<span style="color:#75715e">// 分析不了最左下变得值，次数不够；次数太多会溢出==》 只能借助特殊if条件来判断
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 4<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						<span style="color:#75715e">// sum值为4时才进行预判。
+</span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+							flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+							<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+						<span style="color:#f92672">}</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 判断下一子是否是同样的子，不同则令sun清零
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 往左下角移动一次
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>			
+				<span style="color:#f92672">}</span>
+				<span style="color:#75715e">// 当和期望的子不同时：
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">//	往左下角移动一次
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+
+	   <span style="color:#75715e">//		 再分析“左斜”的下半部分
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// i 始终等于14 ，j 不断递减移动
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 14<span style="color:#f92672">,</span> j <span style="color:#f92672">=</span> 14<span style="color:#f92672">;</span> j <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> j<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一斜行刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// i 是几，times 就可以移动几次
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 构造a ,b 来代替i, j 移动
+</span><span style="color:#75715e"></span>			a <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+			b <span style="color:#f92672">=</span> j<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>times <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> times <span style="color:#f92672">&lt;=</span> 14 <span style="color:#f92672">-</span> j <span style="color:#f92672">-</span>1 <span style="color:#f92672">;</span> times<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 确定刚开始的当前的的字符串；
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// j的值为x，就要分析x次current;
+</span><span style="color:#75715e"></span>				current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>a<span style="color:#f92672">][</span>b<span style="color:#f92672">]</span> <span style="color:#f92672">;</span>
+				<span style="color:#75715e">// 判断当前子和期望的子是否相同，相同则
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum<span style="color:#f92672">++;</span>      
+					<span style="color:#75715e">// 判断是否5子相连
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						 flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						 <span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// ！！！！！！
+</span><span style="color:#75715e"></span>					<span style="color:#75715e">// 分析不了最左下变得值，次数不够；次数太多会溢出==》 只能借助特殊if条件来判断
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 4<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						<span style="color:#75715e">// sum值为4时才进行预判。
+</span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+							flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+							<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+						<span style="color:#f92672">}</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 判断下一子是否是同样的子，不同则令sun清零
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 往右上角移动一次
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>			
+				<span style="color:#f92672">}</span>
+				<span style="color:#75715e">// 当和期望的子不同时：
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">//	往右上角移动一次
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">//	 再分析“右斜”的上半部分
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// i 始终等于0 ，j 不断递减移动
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> j <span style="color:#f92672">=</span> 14<span style="color:#f92672">;</span> j <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> j<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一斜行刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// i 是几，times 就可以移动几次
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 构造a ,b 来代替i, j 移动
+</span><span style="color:#75715e"></span>			a <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+			b <span style="color:#f92672">=</span> j<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>times <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> times <span style="color:#f92672">&lt;=</span> 14 <span style="color:#f92672">-</span> j <span style="color:#f92672">-</span>1 <span style="color:#f92672">;</span> times<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 确定刚开始的当前的的字符串；
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// j的值为x，就要分析x次current;
+</span><span style="color:#75715e"></span>				current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>a<span style="color:#f92672">][</span>b<span style="color:#f92672">]</span> <span style="color:#f92672">;</span>
+				<span style="color:#75715e">// 判断当前子和期望的子是否相同，相同则
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum<span style="color:#f92672">++;</span>      
+					<span style="color:#75715e">// 判断是否5子相连
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						 flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						 <span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// ！！！！！！
+</span><span style="color:#75715e"></span>					<span style="color:#75715e">// 分析不了最左下变得值，次数不够；次数太多会溢出==》 只能借助特殊if条件来判断
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 4<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						<span style="color:#75715e">// sum值为4时才进行预判。
+</span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+							flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+							<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+						<span style="color:#f92672">}</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 判断下一子是否是同样的子，不同则令sun清零
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">+</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 往右下角移动
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>			
+				<span style="color:#f92672">}</span>
+				<span style="color:#75715e">// 当和期望的子不同时：
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">//	往右下角移动
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#75715e">//	 最后分析“右斜”的下半部分
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// i 始终等于14 ，j 不断递增移动
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">=</span> 14<span style="color:#f92672">,</span> j <span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;=</span>14<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 每一斜行刚开始，让sum变量值为0.
+</span><span style="color:#75715e"></span>			sum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// i 是几，times 就可以移动几次
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 构造a ,b 来代替i, j 移动
+</span><span style="color:#75715e"></span>			a <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+			b <span style="color:#f92672">=</span> j<span style="color:#f92672">;</span>
+			<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>times <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span> times <span style="color:#f92672">&lt;=</span> j <span style="color:#f92672">-</span> 1 <span style="color:#f92672">;</span> times<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">// 确定刚开始的当前的的字符串；
+</span><span style="color:#75715e"></span>				<span style="color:#75715e">// j的值为x，就要分析x次current;
+</span><span style="color:#75715e"></span>				current <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>a<span style="color:#f92672">][</span>b<span style="color:#f92672">]</span> <span style="color:#f92672">;</span>
+				<span style="color:#75715e">// 判断当前子和期望的子是否相同，相同则
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum<span style="color:#f92672">++;</span>      
+					<span style="color:#75715e">// 判断是否5子相连
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 5<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						 flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+						 <span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// ！！！！！！
+</span><span style="color:#75715e"></span>					<span style="color:#75715e">// 分析不了最左下变得值，次数不够；次数太多会溢出==》 只能借助特殊if条件来判断
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">==</span> 4<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						<span style="color:#75715e">// sum值为4时才进行预判。
+</span><span style="color:#75715e"></span>						<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+							flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">;</span>
+							<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+						<span style="color:#f92672">}</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 判断下一子是否是同样的子，不同则令sun清零
+</span><span style="color:#75715e"></span>					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>board<span style="color:#f92672">[</span>a <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>b <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+					sum <span style="color:#f92672">=</span> 0 <span style="color:#f92672">;</span>
+					<span style="color:#f92672">}</span>
+					<span style="color:#75715e">// 往右下角移动
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>			
+				<span style="color:#f92672">}</span>
+				<span style="color:#75715e">// 当和期望的子不同时：
+</span><span style="color:#75715e"></span>				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>current <span style="color:#f92672">!=</span> symbol<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				<span style="color:#75715e">//	往右下角移动
+</span><span style="color:#75715e"></span>					a <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				    b <span style="color:#f92672">=</span> b <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+				<span style="color:#f92672">}</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#66d9ef">return</span> flag<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+
+<span style="color:#75715e">/** 
+</span><span style="color:#75715e"> * 主函数
+</span><span style="color:#75715e"> */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception  <span style="color:#f92672">{</span>   
+		<span style="color:#75715e">// 创建对象Gobang 的一个Gobang类型的实例 gb
+</span><span style="color:#75715e"></span>        Gobang gb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Gobang<span style="color:#f92672">();</span>
+		gb<span style="color:#f92672">.</span><span style="color:#a6e22e">initBoard</span><span style="color:#f92672">();</span>
+		gb<span style="color:#f92672">.</span><span style="color:#a6e22e">printBoard</span><span style="color:#f92672">();</span>
+		<span style="color:#75715e">// 要创建随机数，首先应该要创建Random对象的实例。！！！
+</span><span style="color:#75715e"></span>		Random rand <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">int</span> yPos_pc <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> xPos_pc <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 初始化布尔变量result_Human
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">boolean</span> result_Human <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 初始化布尔变量result_Human
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">boolean</span> result_Computer <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 这是用于获取键盘输入的方法
+</span><span style="color:#75715e"></span>		BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">));</span>
+		String inputStr <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		<span style="color:#75715e">// br.readLine()：每当在键盘上输入一行内容按回车，用户刚输入的内容将被br读取到。
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span> <span style="color:#f92672">((</span>inputStr <span style="color:#f92672">=</span> br<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">())</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 将用户输入的字符串以逗号（,）作为分隔符，分隔成2个字符串
+</span><span style="color:#75715e"></span>			String<span style="color:#f92672">[]</span> posStrArr <span style="color:#f92672">=</span> inputStr<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;,&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#75715e">// 将2个字符串转换成用户下棋的座标
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">int</span> xPos <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>posStrArr<span style="color:#f92672">[</span>0<span style="color:#f92672">]);</span>
+			<span style="color:#66d9ef">int</span> yPos <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>posStrArr<span style="color:#f92672">[</span>1<span style="color:#f92672">]);</span>
+			<span style="color:#75715e">// 判断人下的棋子上是否有棋子，如果有，提醒重新下这个棋子
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">[</span>yPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>xPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;╋&#34;</span><span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 把对应的数组元素赋为&#34;●&#34;。
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 没有其他棋子，则可以下在这里
+</span><span style="color:#75715e"></span>			gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">[</span>yPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>xPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;●&#34;</span><span style="color:#f92672">;</span> 
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 如果已有棋子，则
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">[</span>yPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">][</span>xPos <span style="color:#f92672">-</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;╋&#34;</span> <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;There is a piece on the board, please try to use another place !&#34;</span><span style="color:#f92672">);</span>
+				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;请重新输入您下棋的座标，应以x,y的格式：&#34;</span><span style="color:#f92672">);</span>
+				<span style="color:#66d9ef">continue</span> <span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">/*
+</span><span style="color:#75715e">			 电脑随机生成2个整数，作为电脑下棋的座标，赋给board数组。
+</span><span style="color:#75715e">			 还涉及
+</span><span style="color:#75715e">				1.座标的有效性，只能是数字，不能超出棋盘范围
+</span><span style="color:#75715e">				2.如果下的棋的点，不能重复下棋。
+</span><span style="color:#75715e">				3.每次下棋后，需要扫描谁赢了
+</span><span style="color:#75715e">			 */</span>
+			 <span style="color:#75715e">// 构建电脑下的棋子坐标
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 同时判断电脑下的棋子坐标是否有效
+</span><span style="color:#75715e"></span>			 <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">++</span> <span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				 yPos_pc <span style="color:#f92672">=</span> rand<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1 <span style="color:#f92672">;</span>
+			     xPos_pc <span style="color:#f92672">=</span> rand<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+				 <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">[</span> yPos_pc  <span style="color:#f92672">][</span>xPos_pc  <span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;╋&#34;</span> <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+					<span style="color:#75715e">// Gobang.java:85: 错误: 非法字符: &#39;\uff1b&#39;
+</span><span style="color:#75715e"></span>					<span style="color:#75715e">// 下面的分号写错了，用了中文的 
+</span><span style="color:#75715e"></span>					  <span style="color:#75715e">// gb.board[ yPos_pc - 1][xPos_pc - 1]  = &#34;●&#34; ；
+</span><span style="color:#75715e"></span>					 <span style="color:#75715e">//  gb.board[ yPos_pc - 1 ][xPos_pc - 1 ]  = &#34;▲&#34; ;
+</span><span style="color:#75715e"></span>					  gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">[</span> yPos_pc <span style="color:#f92672">-</span> 1 <span style="color:#f92672">][</span>xPos_pc <span style="color:#f92672">-</span> 1 <span style="color:#f92672">]</span>  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;▲&#34;</span> <span style="color:#f92672">;</span>
+					  <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+				 <span style="color:#f92672">}</span>
+			 <span style="color:#f92672">}</span>
+			 <span style="color:#75715e">// 打印棋盘
+</span><span style="color:#75715e"></span>			 gb<span style="color:#f92672">.</span><span style="color:#a6e22e">printBoard</span><span style="color:#f92672">();</span>
+
+
+			 <span style="color:#75715e">// 调用判断谁赢了的算法
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// 判断人类
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// result_Human =  judgematch( board, &#34;*&#34; ) ;
+</span><span style="color:#75715e"></span>			result_Human <span style="color:#f92672">=</span>  judgematch<span style="color:#f92672">(</span> gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;●&#34;</span> <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+			<span style="color:#75715e">// 判断电脑
+</span><span style="color:#75715e"></span>		    <span style="color:#75715e">// result_Pc =  judgematch( board, &#34;▲&#34; ) ;
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">// result_Pc =  judgematch( gb.board, &#34;▲&#34; ) ;
+</span><span style="color:#75715e"></span>			result_Computer <span style="color:#f92672">=</span>  judgematch<span style="color:#f92672">(</span> gb<span style="color:#f92672">.</span><span style="color:#a6e22e">board</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;▲&#34;</span> <span style="color:#f92672">)</span> <span style="color:#f92672">;</span>
+<span style="color:#75715e">//			 while (gb.board[ rand.nextInt(16) - 1][rand.nextInt(16) - 1] != &#34;●&#34;  )  {
+</span><span style="color:#75715e">//					gb.board[yPos_pc - 1][xPos_pc - 1] = &#34;$&#34; ;
+</span><span style="color:#75715e">//			 }
+</span><span style="color:#75715e"></span>	
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>result_Human<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Human victory&#34;</span><span style="color:#f92672">);</span>
+			<span style="color:#75715e">//	break;
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>result_Computer<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Computer victory&#34;</span><span style="color:#f92672">);</span>
+				<span style="color:#75715e">// break;
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;请输入您下棋的座标，应以x,y的格式：&#34;</span><span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
