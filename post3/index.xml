@@ -6,10 +6,20 @@
     <description>Recent content in Post3s on Talian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2020 15:17:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2020 21:28:49 +0800</lastBuildDate>
     
 	<atom:link href="https://taliantiger.github.io/post3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>剑指offer_面试题5</title>
+      <link>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%985/</link>
+      <pubDate>Sun, 05 Jul 2020 21:28:49 +0800</pubDate>
+      
+      <guid>https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%985/</guid>
+      <description>替换空格 请实现一个函数，把字符串中的每个空格替换成“%20”。例如，输入“We are happy.”， 则输出“We%20are%20happy.”。
+ import java.util.* ; // 要导入这个包，不然调用Arrays.toString() 方法会出错 public class Solution_5 { /* * length 为字符数组string 的总容量 */ //	public static void ReplaceBlank(char string[], int length) { //	if (string == null || length &amp;lt;= 0 )	{ //	// 尝试看看能不能这样写 //	return ; //	} //	int originalLength = 0; //	int numberOfBlank = 0; //	int i = 0; //	while (string[i] != &amp;#39;\0&amp;#39;) { //	// 统计原始数组的长度为多少 //	++originalLength; //	// 统计有多少个空格 //	if (string[i] == &amp;#39; &amp;#39;) { //	++numberOfBlank; //	++i; //	} //	} //	/* newlength 为把空格替换成‘%20’之后的长度 */ //	int newLength = originalLength + numberOfBlank * 2 ; //	if (newLength &amp;gt; length) { //	// 同样尝试能不能这样写 //	return ; // c++里的意思是：不带返回值的return 语句 //	} //	//	int indexOfOriginal = originalLength ; //	int indexOfNew = newLength; //	// 当“前指针（indexOfOriginal)”大于0，同时“后指针(indexOfNew)” 在“前指针”的后面时，执行循环 //	while (indexOfOriginal &amp;gt;= 0 &amp;amp;&amp;amp; indexOfNew &amp;gt; indexOfOriginal ) { //	// 当有空格时，执行替换 //	if (string[indexOfOriginal] == &amp;#39; &amp;#39;) { //	string[indexOfNew--] = &amp;#39;0&amp;#39;; //	string[indexOfNew--] = &amp;#39;2&amp;#39;; //	string[indexOfNew--] = &amp;#39;%&amp;#39;; //	} //	// 当没有空格时，执行移动操作 //	else { //	string[indexOfNew-- ] = string[indexOfOriginal]; //	} //	// 总之每次结尾时，“前指针”执行一次前移操作 //	--indexOfOriginal; //	} ////	for (i = 0; i &amp;lt;= string.</description>
+    </item>
     
     <item>
       <title>疯狂Java讲义_Chapter4_编写控制台的五子棋游戏</title>

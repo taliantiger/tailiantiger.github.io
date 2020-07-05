@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>剑指offer_面试题5 // Talian</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.68.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="taliantiger" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://taliantiger.github.io/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="剑指offer_面试题5"/>
+<meta name="twitter:description" content="替换空格 请实现一个函数，把字符串中的每个空格替换成“%20”。例如，输入“We are happy.”， 则输出“We%20are%20happy.”。
+ import java.util.* ; // 要导入这个包，不然调用Arrays.toString() 方法会出错 public class Solution_5 { /* * length 为字符数组string 的总容量 */ //	public static void ReplaceBlank(char string[], int length) { //	if (string == null || length &lt;= 0 )	{ //	// 尝试看看能不能这样写 //	return ; //	} //	int originalLength = 0; //	int numberOfBlank = 0; //	int i = 0; //	while (string[i] != &#39;\0&#39;) { //	// 统计原始数组的长度为多少 //	&#43;&#43;originalLength; //	// 统计有多少个空格 //	if (string[i] == &#39; &#39;) { //	&#43;&#43;numberOfBlank; //	&#43;&#43;i; //	} //	} //	/* newlength 为把空格替换成‘%20’之后的长度 */ //	int newLength = originalLength &#43; numberOfBlank * 2 ; //	if (newLength &gt; length) { //	// 同样尝试能不能这样写 //	return ; // c&#43;&#43;里的意思是：不带返回值的return 语句 //	} //	//	int indexOfOriginal = originalLength ; //	int indexOfNew = newLength; //	// 当“前指针（indexOfOriginal)”大于0，同时“后指针(indexOfNew)” 在“前指针”的后面时，执行循环 //	while (indexOfOriginal &gt;= 0 &amp;&amp; indexOfNew &gt; indexOfOriginal ) { //	// 当有空格时，执行替换 //	if (string[indexOfOriginal] == &#39; &#39;) { //	string[indexOfNew--] = &#39;0&#39;; //	string[indexOfNew--] = &#39;2&#39;; //	string[indexOfNew--] = &#39;%&#39;; //	} //	// 当没有空格时，执行移动操作 //	else { //	string[indexOfNew-- ] = string[indexOfOriginal]; //	} //	// 总之每次结尾时，“前指针”执行一次前移操作 //	--indexOfOriginal; //	} ////	for (i = 0; i &lt;= string."/>
+
+    <meta property="og:title" content="剑指offer_面试题5" />
+<meta property="og:description" content="替换空格 请实现一个函数，把字符串中的每个空格替换成“%20”。例如，输入“We are happy.”， 则输出“We%20are%20happy.”。
+ import java.util.* ; // 要导入这个包，不然调用Arrays.toString() 方法会出错 public class Solution_5 { /* * length 为字符数组string 的总容量 */ //	public static void ReplaceBlank(char string[], int length) { //	if (string == null || length &lt;= 0 )	{ //	// 尝试看看能不能这样写 //	return ; //	} //	int originalLength = 0; //	int numberOfBlank = 0; //	int i = 0; //	while (string[i] != &#39;\0&#39;) { //	// 统计原始数组的长度为多少 //	&#43;&#43;originalLength; //	// 统计有多少个空格 //	if (string[i] == &#39; &#39;) { //	&#43;&#43;numberOfBlank; //	&#43;&#43;i; //	} //	} //	/* newlength 为把空格替换成‘%20’之后的长度 */ //	int newLength = originalLength &#43; numberOfBlank * 2 ; //	if (newLength &gt; length) { //	// 同样尝试能不能这样写 //	return ; // c&#43;&#43;里的意思是：不带返回值的return 语句 //	} //	//	int indexOfOriginal = originalLength ; //	int indexOfNew = newLength; //	// 当“前指针（indexOfOriginal)”大于0，同时“后指针(indexOfNew)” 在“前指针”的后面时，执行循环 //	while (indexOfOriginal &gt;= 0 &amp;&amp; indexOfNew &gt; indexOfOriginal ) { //	// 当有空格时，执行替换 //	if (string[indexOfOriginal] == &#39; &#39;) { //	string[indexOfNew--] = &#39;0&#39;; //	string[indexOfNew--] = &#39;2&#39;; //	string[indexOfNew--] = &#39;%&#39;; //	} //	// 当没有空格时，执行移动操作 //	else { //	string[indexOfNew-- ] = string[indexOfOriginal]; //	} //	// 总之每次结尾时，“前指针”执行一次前移操作 //	--indexOfOriginal; //	} ////	for (i = 0; i &lt;= string." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://taliantiger.github.io/post3/%E5%89%91%E6%8C%87offer_%E9%9D%A2%E8%AF%95%E9%A2%985/" />
+<meta property="article:published_time" content="2020-07-05T21:28:49+08:00" />
+<meta property="article:modified_time" content="2020-07-05T21:28:49+08:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://taliantiger.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="taliantiger" /></a>
+      <h1>Talian</h1>
+      <p>Empty talk spoils the country, but practical action prospers the country</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/taliantiger" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">剑指offer_面试题5</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 5, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <h4 id="替换空格">替换空格</h4>
+<p>请实现一个函数，把字符串中的每个空格替换成“%20”。例如，输入“We are happy.”，
+则输出“We%20are%20happy.”。</p>
+<hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#f92672">import</span> java.util.*  <span style="color:#f92672">;</span>  <span style="color:#75715e">// 要导入这个包，不然调用Arrays.toString() 方法会出错
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution_5</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">/* 
+</span><span style="color:#75715e">	 *  length 为字符数组string 的总容量 
+</span><span style="color:#75715e">	 */</span>
+<span style="color:#75715e">//	public static void ReplaceBlank(char string[], int length) {
+</span><span style="color:#75715e">//		if (string == null || length &lt;= 0 )	{
+</span><span style="color:#75715e">//			// 尝试看看能不能这样写
+</span><span style="color:#75715e">//			return ;
+</span><span style="color:#75715e">//		}
+</span><span style="color:#75715e">//		int originalLength = 0;
+</span><span style="color:#75715e">//		int numberOfBlank = 0;
+</span><span style="color:#75715e">//		int i = 0;
+</span><span style="color:#75715e">//		while (string[i] != &#39;\0&#39;) {
+</span><span style="color:#75715e">//			// 统计原始数组的长度为多少
+</span><span style="color:#75715e">//			++originalLength;
+</span><span style="color:#75715e">//			// 统计有多少个空格
+</span><span style="color:#75715e">//			if (string[i] == &#39; &#39;)  {
+</span><span style="color:#75715e">//				++numberOfBlank;
+</span><span style="color:#75715e">//				++i;
+</span><span style="color:#75715e">//			}
+</span><span style="color:#75715e">//		}
+</span><span style="color:#75715e">//		/* newlength 为把空格替换成‘%20’之后的长度 */
+</span><span style="color:#75715e">//		int newLength = originalLength + numberOfBlank * 2 ;
+</span><span style="color:#75715e">//		if (newLength &gt; length) {
+</span><span style="color:#75715e">//			// 同样尝试能不能这样写
+</span><span style="color:#75715e">//			return ;    // c++里的意思是：不带返回值的return 语句
+</span><span style="color:#75715e">//		}
+</span><span style="color:#75715e">//		
+</span><span style="color:#75715e">//		int indexOfOriginal = originalLength ;
+</span><span style="color:#75715e">//		int indexOfNew = newLength;
+</span><span style="color:#75715e">//		// 当“前指针（indexOfOriginal)”大于0，同时“后指针(indexOfNew)” 在“前指针”的后面时，执行循环
+</span><span style="color:#75715e">//		while (indexOfOriginal &gt;= 0 &amp;&amp; indexOfNew &gt; indexOfOriginal )  {
+</span><span style="color:#75715e">//			// 当有空格时，执行替换
+</span><span style="color:#75715e">//			if (string[indexOfOriginal] == &#39; &#39;)  {
+</span><span style="color:#75715e">//				string[indexOfNew--] = &#39;0&#39;;
+</span><span style="color:#75715e">//				string[indexOfNew--] = &#39;2&#39;;
+</span><span style="color:#75715e">//				string[indexOfNew--] = &#39;%&#39;;
+</span><span style="color:#75715e">//			}
+</span><span style="color:#75715e">//			// 当没有空格时，执行移动操作
+</span><span style="color:#75715e">//			else  {
+</span><span style="color:#75715e">//				string[indexOfNew-- ] = string[indexOfOriginal];
+</span><span style="color:#75715e">//			}
+</span><span style="color:#75715e">//			// 总之每次结尾时，“前指针”执行一次前移操作
+</span><span style="color:#75715e">//			--indexOfOriginal;
+</span><span style="color:#75715e">//		}
+</span><span style="color:#75715e">////		for (i = 0; i &lt;= string.length - 1; i++ )	 {
+</span><span style="color:#75715e">////			System.out.println(string[i]);
+</span><span style="color:#75715e">////		}
+</span><span style="color:#75715e">////		return;
+</span><span style="color:#75715e">//	}
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 改写为有返回值的方法
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span>  String <span style="color:#a6e22e">ReplaceBlank</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span> string<span style="color:#f92672">[],</span> <span style="color:#66d9ef">int</span> length<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>string <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> length <span style="color:#f92672">&lt;=</span> 0 <span style="color:#f92672">)</span>	<span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 尝试看看能不能这样写
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#66d9ef">int</span> originalLength <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> numberOfBlank <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>string<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 统计原始数组的长度为多少
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">++</span>originalLength<span style="color:#f92672">;</span>
+			<span style="color:#75715e">// 统计有多少个空格
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>string<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+				<span style="color:#f92672">++</span>numberOfBlank<span style="color:#f92672">;</span>
+				<span style="color:#75715e">// ++i;
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">}</span>
+			<span style="color:#f92672">++</span>i<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#75715e">// System.out.println(string[17]);
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">/* newlength 为把空格替换成‘%20’之后的长度 */</span>
+		<span style="color:#75715e">// 虽然最后的newLength值虽然为17，但是实际数组长度大小为18
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">int</span> newLength <span style="color:#f92672">=</span> originalLength <span style="color:#f92672">+</span> numberOfBlank <span style="color:#f92672">*</span> 2 <span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 这里 newLength 代表的时序号数
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// length - 1 此时也代表着序号数。
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newLength <span style="color:#f92672">&lt;</span> length <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 同样尝试能不能这样写
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>    <span style="color:#75715e">// c++里的意思是：不带返回值的return 语句
+</span><span style="color:#75715e"></span>		<span style="color:#f92672">}</span>
+		
+		<span style="color:#66d9ef">int</span> indexOfOriginal <span style="color:#f92672">=</span> originalLength <span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">int</span> indexOfNew <span style="color:#f92672">=</span> newLength<span style="color:#f92672">;</span>
+		<span style="color:#75715e">// 当“前指针（indexOfOriginal)”大于0，同时“后指针(indexOfNew)” 在“前指针”的后面时，执行循环
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>indexOfOriginal <span style="color:#f92672">&gt;=</span> 0 <span style="color:#f92672">&amp;&amp;</span> indexOfNew <span style="color:#f92672">&gt;</span> indexOfOriginal <span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// 当有空格时，执行替换
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>string<span style="color:#f92672">[</span>indexOfOriginal<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+				string<span style="color:#f92672">[</span>indexOfNew<span style="color:#f92672">--]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0&#39;</span><span style="color:#f92672">;</span>
+				string<span style="color:#f92672">[</span>indexOfNew<span style="color:#f92672">--]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">;</span>
+				string<span style="color:#f92672">[</span>indexOfNew<span style="color:#f92672">--]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;%&#39;</span><span style="color:#f92672">;</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 当没有空格时，执行移动操作
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">else</span>  <span style="color:#f92672">{</span>
+				string<span style="color:#f92672">[</span>indexOfNew<span style="color:#f92672">--</span> <span style="color:#f92672">]</span> <span style="color:#f92672">=</span> string<span style="color:#f92672">[</span>indexOfOriginal<span style="color:#f92672">];</span>
+			<span style="color:#f92672">}</span>
+			<span style="color:#75715e">// 总之每次结尾时，“前指针”执行一次前移操作
+</span><span style="color:#75715e"></span>			<span style="color:#f92672">--</span>indexOfOriginal<span style="color:#f92672">;</span>
+		<span style="color:#f92672">}</span>
+		<span style="color:#75715e">// 虽然最后结果,result 都是字符串类型，但是:   
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// String result = String.valueOf(string);    // 通过String 类调用的方法：
+</span><span style="color:#75715e"></span>																		<span style="color:#75715e">// 最后显示结果只有字符串，没有中括号和逗号，更像字符串。
+</span><span style="color:#75715e"></span>		 String result <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(</span>string<span style="color:#f92672">)</span> <span style="color:#f92672">;</span>   <span style="color:#75715e">// 通过Arrays类调用的方法：
+</span><span style="color:#75715e"></span>																	<span style="color:#75715e">// 最后结果有中括号和逗号 。同时要导入包java.util.* 。否则报错找不到变量Arrays!
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span>  <span style="color:#f92672">{</span>
+
+<span style="color:#75715e">// 		// 只运用了一个数组，所有一开始时定义得就大些。
+</span><span style="color:#75715e">//		char[] arr = new char[18];
+</span><span style="color:#75715e">//	    // arr = {&#39;w&#39;, &#39;e&#39;, &#39; &#39;, &#39;a&#39;, &#39;r&#39;, &#39;e&#39;, &#39; &#39;, &#39;h&#39;, &#39;a&#39;, &#39;p&#39;, &#39;p&#39;, &#39;y&#39; } ;
+</span><span style="color:#75715e">//		arr[0] = &#39;W&#39;;
+</span><span style="color:#75715e">//		arr[1] = &#39;e&#39;;
+</span><span style="color:#75715e">//		arr[2] = &#39; &#39;;
+</span><span style="color:#75715e">//		arr[3] = &#39;a&#39;;
+</span><span style="color:#75715e">//		arr[4] = &#39;r&#39;;
+</span><span style="color:#75715e">//		arr[5] = &#39;e&#39;;
+</span><span style="color:#75715e">//		arr[6] = &#39; &#39;;
+</span><span style="color:#75715e">//		arr[7] = &#39;h&#39;;
+</span><span style="color:#75715e">//		arr[8] = &#39;a&#39;;
+</span><span style="color:#75715e">//		arr[9] = &#39;p&#39;;
+</span><span style="color:#75715e">//		arr[10] = &#39;p&#39;;
+</span><span style="color:#75715e">//		arr[11] = &#39;y&#39;;
+</span><span style="color:#75715e">//		arr[12] = &#39;.&#39;;
+</span><span style="color:#75715e">//		arr[13] = &#39;\0&#39;;
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">// 用另外一种方法初始化字符数组
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 末尾的未使用元素，全定义为结尾符号   &#39;\0&#39;
+</span><span style="color:#75715e"></span>		  <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> arr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[]</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;W&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;e&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;r&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;e&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;h&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;p&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;p&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;y&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">,</span>    <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#39;\0&#39;</span><span style="color:#f92672">}</span> <span style="color:#f92672">;</span>
+
+		<span style="color:#75715e">// 特殊测试用例，空字符串 ==&gt; 花括号里面有 &#39;\0&#39; 时，length填写 1 ； 花括号里面什么都没时，length填写0
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">//  char[] arr = new char[] {   } ;
+</span><span style="color:#75715e"></span>
+		<span style="color:#75715e">// 特殊测试用例，无空格
+</span><span style="color:#75715e"></span>		  <span style="color:#75715e">// char[] arr = new char[] {&#39;W&#39;, &#39;e&#39;, &#39;a&#39;, &#39;r&#39;, &#39;e&#39;, &#39;h&#39;, &#39;a&#39;, &#39;p&#39;, &#39;p&#39;, &#39;y&#39;, &#39;.&#39;, &#39;\0&#39;   } ;
+</span><span style="color:#75715e"></span>        
+		<span style="color:#75715e">// 特殊测试用例，包含开头、中间、结尾有空格。修改后记得修改形参中 length 的值
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// char[] arr = new char[] {&#39; &#39;, &#39;W&#39;, &#39;e&#39;, &#39; &#39;, &#39;a&#39;, &#39;r&#39;, &#39;e&#39;, &#39; &#39;, &#39; &#39;, &#39;h&#39;, &#39;a&#39;, &#39;p&#39;, &#39;p&#39;, &#39;y&#39;, &#39;.&#39;,&#39; &#39;,  &#39;\0&#39;,    &#39;\0&#39;, &#39;\0&#39;,&#39;\0&#39;, &#39;\0&#39;, &#39;\0&#39;, &#39;\0&#39;,&#39;\0&#39;, &#39;\0&#39;,&#39;\0&#39;, &#39;\0&#39;} ;
+</span><span style="color:#75715e"></span>		
+		<span style="color:#75715e">// System.out.println(&#34;Hello world! &#34;);
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 每次改变空格的格式，就要改变末尾 &#39;\0&#39; 的个数，让数组arr最后的长度等于刚开始输入的length长度。
+</span><span style="color:#75715e"></span>		String result <span style="color:#f92672">=</span> ReplaceBlank<span style="color:#f92672">(</span>arr<span style="color:#f92672">,</span> 18<span style="color:#f92672">);</span>
+
+<span style="color:#75715e">//		for (int i = 0; i &lt;= string.length - 1; i++ )	 {
+</span><span style="color:#75715e">//			System.out.println(string[i]);
+</span><span style="color:#75715e">//		}
+</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
+		<span style="color:#75715e">// System.out.println(&#34;Hello world! &#34;);
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
